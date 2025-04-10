@@ -60,6 +60,79 @@ EXTRACT_KERNEL_BINARIES()
     cd "$PDR"
 }
 
+EXTRACT_CSC_PARTITIONS()
+{
+    local PDR
+    PDR="$(pwd)"
+
+    local FILES="prism.img.lz4 optics.img.lz4"
+
+    echo "- Extracting CSC partitions..."
+    cd "$FW_DIR/${MODEL}_${REGION}"
+    for file in $FILES
+    do
+        [ -f "${file%.lz4}" ] && continue
+        tar tf "$CSC_TAR" "$file" &>/dev/null || continue
+        echo "Extracting ${file%.img.lz4}"
+        tar xf "$CSC_TAR" "$file" && lz4 -d -q --rm "$file" "${file%.lz4}"
+
+        [ -d "tmp_out" ] && mountpoint -q "tmp_out" && sudo umount "tmp_out"
+        mkdir -p "tmp_out"
+
+        PREFIX="sudo"
+        [ -d "${file%.img.lz4}" ] && rm -rf "${file%.img.lz4}"
+        mkdir -p "${file%.img.lz4}"
+        $PREFIX mount -o ro "${file%.lz4}" "tmp_out"
+        $PREFIX cp -a --preserve=all tmp_out/* "${file%.img.lz4}"
+        for i in $($PREFIX find "${file%.img.lz4}"); do
+           $PREFIX chown -h "$(whoami)":"$(whoami)" "$i"
+        done
+        [[ -e ""${file%.img.lz4}"/lost+found" ]] && rm -rf ""${file%.img.lz4}"/lost+found"
+
+            echo "Generating fs_config/file_context for ${file%.lz4}"
+            [ -f "file_context-${file%.img.lz4}" ] && rm "file_context-${file%.img.lz4}"
+            [ -f "fs_config-${file%.img.lz4}" ] && rm "fs_config-${file%.img.lz4}"
+            while read -r i; do
+                {
+                    echo -n "$i "
+                    $PREFIX getfattr -n security.selinux --only-values -h "$i"
+                    echo ""
+                } >> "file_context-${file%.img.lz4}"
+
+                case "$i" in
+                    *"run-as" | *"simpleperf_app_runner")
+                        CAPABILITIES="0xc0"
+                        ;;
+                    *)
+                        CAPABILITIES="0x0"
+                        ;;
+                esac
+                $PREFIX stat -c "%n %u %g %a capabilities=$CAPABILITIES" "$i" >> "fs_config-${file%.img.lz4}"
+            done <<< "$($PREFIX find "tmp_out")"
+            if [ "$PARTITION" = "system" ]; then
+                sed -i "s/tmp_out /\/ /g" "file_context-${file%.img.lz4}" \
+                    && sed -i "s/tmp_out\//\//g" "file_context-${file%.img.lz4}"
+                sed -i "s/tmp_out / /g" "fs_config-${file%.img.lz4}" \
+                    && sed -i "s/tmp_out\///g" "fs_config-${file%.img.lz4}"
+            else
+                sed -i "s/tmp_out/\/${file%.img.lz4}/g" "file_context-${file%.img.lz4}"
+                sed -i "s/tmp_out / /g" "fs_config-${file%.img.lz4}" \
+                    && sed -i "s/tmp_out/${file%.img.lz4}/g" "fs_config-${file%.img.lz4}"
+            fi
+            sed -i "s/\x0//g" "file_context-${file%.img.lz4}" \
+                && sed -i 's/\./\\./g' "file_context-${file%.img.lz4}" \
+                && sed -i 's/\+/\\+/g' "file_context-${file%.img.lz4}" \
+                && sed -i 's/\[/\\[/g' "file_context-${file%.img.lz4}"
+
+            $PREFIX umount "tmp_out"
+            rm "${file%.lz4}"
+
+        rm -r "tmp_out"
+    done
+
+    cd "$PDR"
+}
+
 EXTRACT_OS_PARTITIONS()
 {
     local PDR
@@ -71,7 +144,7 @@ EXTRACT_OS_PARTITIONS()
     echo "- Extracting OS partitions..."
     cd "$FW_DIR/${MODEL}_${REGION}"
 
-    local COMMON_FOLDERS="odm product system vendor"
+    local COMMON_FOLDERS="odm_a product_a system_a vendor_a"
     for folder in $COMMON_FOLDERS
     do
         [ ! -d "$folder" ] && SHOULD_EXTRACT=true
@@ -93,7 +166,7 @@ EXTRACT_OS_PARTITIONS()
         for img in *.img
         do
             local PREFIX=""
-            local PARTITION="${img%.img}"
+            local PARTITION="${img%_a.img}"
 
             case "$(GET_IMG_FS_TYPE "$img")" in
                 "erofs")
@@ -189,10 +262,12 @@ EXTRACT_AVB_BINARIES()
 EXTRACT_ALL()
 {
     BL_TAR=$(find "$ODIN_DIR/${MODEL}_${REGION}" -name "BL*")
+    CSC_TAR=$(find "$ODIN_DIR/${MODEL}_${REGION}" -name "CSC*")
     AP_TAR=$(find "$ODIN_DIR/${MODEL}_${REGION}" -name "AP*")
 
     mkdir -p "$FW_DIR/${MODEL}_${REGION}"
     EXTRACT_KERNEL_BINARIES
+    EXTRACT_CSC_PARTITIONS
     EXTRACT_OS_PARTITIONS
     EXTRACT_AVB_BINARIES
 
