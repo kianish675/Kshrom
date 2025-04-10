@@ -31,7 +31,7 @@ etc/dpolicy
 # Samsung SIM Unlock
 SYSTEM_DEBLOAT+="
 system/bin/ssud
-system/etc/init/ssu_dm1qxxx.rc
+system/etc/init/ssu_a36xqnsxx.rc
 system/etc/init/ssu.rc
 system/etc/permissions/privapp-permissions-com.samsung.ssu.xml
 system/etc/sysconfig/samsungsimunlock.xml
@@ -50,7 +50,7 @@ etc/init/vendor_flash_recovery.rc
 # Apps debloat
 PRODUCT_DEBLOAT+="
 app/AssistantShell
-app/Chrome
+app/Chrome64
 app/DuoStub
 app/Gmail2
 app/Maps
@@ -89,7 +89,6 @@ system/app/SilentLog
 system/app/SmartReminder
 system/app/WebManual
 system/app/WlanTest
-system/etc/init/digitalkey_init_nfc_tss2.rc
 system/etc/init/samsung_pass_authenticator_service.rc
 system/etc/permissions/privapp-permissions-com.microsoft.skydrive.xml
 system/etc/permissions/privapp-permissions-com.samsung.android.app.kfa.xml
@@ -120,11 +119,14 @@ system/etc/sysconfig/samsungpassapp.xml
 system/hidden/SmartTutor
 system/lib64/librildump_jni.so
 system/preload
+system/priv-app/AREmoji
+system/priv-app/AREmojiEditor
 system/priv-app/AuthFramework
+system/priv-app/AvatarEmojiSticker
 system/priv-app/BCService
 system/priv-app/CIDManager
 system/priv-app/DeviceKeystring
-system/priv-app/DiagMonAgent91
+system/priv-app/DiagMonAgent94
 system/priv-app/DigitalKey
 system/priv-app/FBInstaller_NS
 system/priv-app/FBServices
@@ -136,10 +138,11 @@ system/priv-app/ModemServiceMode
 system/priv-app/OneDrive_Samsung_v3
 system/priv-app/PaymentFramework
 system/priv-app/SEMFactoryApp
-system/priv-app/SOAgent7
+system/priv-app/SOAgent75
 system/priv-app/SamsungCarKeyFw
 system/priv-app/SamsungPass
 system/priv-app/SmartEpdgTestApp
+system/priv-app/StickerFaceARAvatar
 system/priv-app/Upday
 "
 
