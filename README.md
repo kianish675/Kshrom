@@ -13,8 +13,8 @@ UN1CA-A70 abides to the GPLv3 license like the original project
 # Credits
 UN1CA-A70:
 - **[Tisenu100](https://github.com/tisenu100)** the Master Kanger
-- **[ExtremeYT]()** for the Bluetooth Patch Upstream
-- **[Peter Knecht]()** for assisting on cameradata bringup for
+- **[ExtremeXT](https://github.com/ExtremeXT)** for the Bluetooth Patch Upstream
+- **[Peter Knecht]()** for assisting on cameradata bringup for legacy devices
 
 UN1CA Team:
 - **[ShaDisNX255](https://github.com/ShaDisNX255)** for his help, time and for his [NcX ROM](https://github.com/ShaDisNX255/NcX_Stock) which inspired this project
