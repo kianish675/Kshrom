@@ -1,0 +1,12 @@
+{
+    "SERVICE_NAME": "BIXBYVISION",
+    "SERVICE_VERSION": "3.5",
+    "MODEL_TYPE": "detector",
+    "COMPILER_NAME": "SNPE",
+    "COMPUTE_UNIT": "DSP",
+    "COMPILER_OPTION": "none",
+    "COMPILER_VERSION": "1.39.0.2079",
+    "MODEL_VERSION": "6.5.1",
+    "MODEL_TYPE_ABBR": "OD",
+    "MODEL_FILES": "slens_detector_cnn.dlc"
+}

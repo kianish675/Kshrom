@@ -1,0 +1,5 @@
+/system u:object_r:system_file:s0
+/system/usr u:object_r:system_file:s0
+/system/usr/share u:object_r:system_file:s0
+/system/usr/share/alsa u:object_r:system_file:s0
+/system/usr/share/alsa/alsa.conf u:object_r:system_file:s0

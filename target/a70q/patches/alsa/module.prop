@@ -1,0 +1,4 @@
+id=alsa
+name=ALSA Configuration patcher
+author=Tisenu100
+description=Reimplements the ALSA Configuration.

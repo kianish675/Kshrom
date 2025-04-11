@@ -1,0 +1,12 @@
+{
+    "SERVICE_NAME": "BIXBYVISION",
+    "SERVICE_VERSION": "3.5",
+    "MODEL_TYPE": "classifier",
+    "COMPILER_NAME": "SNPE",
+    "COMPUTE_UNIT": "DSP",
+    "COMPILER_OPTION": "none",
+    "COMPILER_VERSION": "1.39.0.2079",
+    "MODEL_VERSION": "6.5.1",
+    "MODEL_TYPE_ABBR": "CLS",
+    "MODEL_FILES": "slens_classifier_cnn.dlc"
+}
