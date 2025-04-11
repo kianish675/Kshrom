@@ -1,4 +1,4 @@
-id=selinux
-name=SELinux fix
-author=ShaDisNX255, Fede2782
-description=Removes unsupported sepolicy entries.
+id=cameradata
+name=Cameradata fix
+author=Tisenu100, Peter Knecht
+description=Patch the Camera to abide with the target device configuration.
