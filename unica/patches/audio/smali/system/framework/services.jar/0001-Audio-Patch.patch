@@ -1,0 +1,22 @@
+From 6438aeefb8303d26021f3495c4b7b6bd0b6033ab Mon Sep 17 00:00:00 2001
+From: tisenu100 <tisenu100@github.com>
+Date: Thu Apr 10 20:34:31 2025 +0300
+Subject: [PATCH] Audio Patch
+
+---
+
+diff --git a/smali/com/android/server/audio/AudioService.smali b/smali/com/android/server/audio/AudioService.smali
+index 1b34564..a4846a2 100644
+--- a/smali/com/android/server/audio/AudioService.smali
++++ b/smali/com/android/server/audio/AudioService.smali
+@@ -7061,7 +7061,7 @@
+ 
+     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+ 
+-    const/4 v0, 0x1
++    const/4 v0, 0x0
+ 
+     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
+ 
+-- 
+2.48.1
