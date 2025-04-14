@@ -1,0 +1,4 @@
+id=selinux
+name=SELinux
+author=tisenu100
+description=Prebuilt SELinux patch for A52 vendors.
