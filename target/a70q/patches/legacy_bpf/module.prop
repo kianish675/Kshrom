@@ -1,0 +1,4 @@
+id=legacy_bpf
+name=Hotspot BPF for 4.14 kernels
+author=tisenu100
+description=Downgrade Hotspot Monitoring because the latest one is incompatible with the 4.14 kernel.
