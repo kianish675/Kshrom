@@ -1,8 +1,3 @@
-# Patched GoodLock Manager @corsicanu
-# https://github.com/corsicanu/goodlock_dump
-DOWNLOAD_FILE "https://github.com/corsicanu/goodlock_dump/raw/main/GoodLock_patched.apk" \
-    "$WORK_DIR/system/system/preload/GoodLock/GoodLock.apk"
-
 DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
     "$WORK_DIR/system/system/preload/SBrowser/SBrowser.apk"
 DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.popupcalculator")" \
