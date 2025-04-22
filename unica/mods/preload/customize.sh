@@ -3,12 +3,14 @@
 DOWNLOAD_FILE "https://github.com/corsicanu/goodlock_dump/raw/main/GoodLock_patched.apk" \
     "$WORK_DIR/system/system/preload/GoodLock/GoodLock.apk"
 
-# Samsung Internet Browser
-# https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser
-if [[ "$TARGET_CODENAME" != "a71" ]]; then
-    DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
-        "$WORK_DIR/system/system/preload/SBrowser/SBrowser.apk"
-fi
+DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" \
+    "$WORK_DIR/system/system/preload/SBrowser/SBrowser.apk"
+DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.popupcalculator")" \
+    "$WORK_DIR/system/system/preload/Calculator/Calculator.apk"
+DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.samsung.android.calendar")" \
+    "$WORK_DIR/system/system/preload/Calculator/Calendar.apk"
+DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.clockpackage")" \
+    "$WORK_DIR/system/system/preload/Calculator/Clock.apk"
 
 sed -i "/system\/preload/d" "$WORK_DIR/configs/fs_config-system" \
     && sed -i "/system\/preload/d" "$WORK_DIR/configs/file_context-system"
