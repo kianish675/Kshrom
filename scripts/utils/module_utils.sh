@@ -525,6 +525,7 @@ GET_GALAXY_STORE_DOWNLOAD_URL()
     _CHECK_NON_EMPTY_PARAM "PACKAGE" "$1"
 
     local PACKAGE="$1"
+    local OUT
 
     OUT="$(curl -L -s "https://vas.samsungapps.com/stub/stubDownload.as?appId=$PACKAGE&deviceId=SM-A366B&mcc=505&mnc=03&csc=EUX&sdkVer=35&extuk=a59839d085b95518&pd=0")"
 
