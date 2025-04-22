@@ -169,7 +169,7 @@ case "$FS_TYPE" in
             --readonly --sldc 0 -b 4096
         ;;
     "erofs"*)
-        mkfs.erofs -zlz4hc,9 -b 4096 --mount-point="$MOUNT_POINT" \
+        mkfs.erofs -zlz4,9 -b 4096 --mount-point="$MOUNT_POINT" \
             --fs-config-file="$FS_FILE" --file-contexts="$FC_FILE" -T 1640995200 \
             "$IN_DIR/../$PARTITION.img" "$IN_DIR"
         fsck.erofs --extract "$IN_DIR/../$PARTITION.img"
