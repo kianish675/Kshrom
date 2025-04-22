@@ -525,26 +525,14 @@ GET_GALAXY_STORE_DOWNLOAD_URL()
     _CHECK_NON_EMPTY_PARAM "PACKAGE" "$1"
 
     local PACKAGE="$1"
-    local DEVICES
-    local OS
-    local OUT
 
-    # Galaxy S23 Ultra EUR_OPENX, EUX CSC
-    DEVICES+=("deviceId=SM-S918B&mcc=262&mnc=01&csc=EUX")
-    # Galaxy S23 Ultra CHN_OPENX, CHC CSC
-    DEVICES+=("deviceId=SM-S9180&mcc=460&mnc=00&csc=CHC")
+    OUT="$(curl -L -s "https://vas.samsungapps.com/stub/stubDownload.as?appId=$PACKAGE&deviceId=SM-A366B&mcc=505&mnc=03&csc=EUX&sdkVer=35&extuk=a59839d085b95518&pd=0")"
 
-    OS="sdkVer="
-    OS+="$(GET_PROP "system" "ro.build.version.sdk")"
-    OS+="&oneUiVersion="
-    OS+="$(GET_PROP "system" "ro.build.version.oneui")"
+    if grep -q "Download URI Available" <<< "$OUT"; then
+        grep "downloadURI" <<< "$OUT" | cut -d ">" -f 2 | sed -e 's/<!\[CDATA\[//g; s/\]\]//g'
+        return $?
+    fi
 
-    for i in "${DEVICES[@]}"; do
-        OUT="$(curl -L -s "https://vas.samsungapps.com/stub/stubDownload.as?appId=$PACKAGE&$i&$OS&extuk=0191d6627f38685f&pd=0")"
-        if grep -q "Download URI Available" <<< "$OUT"; then
-            grep "downloadURI" <<< "$OUT" | cut -d ">" -f 2 | sed -e 's/<!\[CDATA\[//g; s/\]\]//g'
-            return $?
-        fi
     done
 
     _ECHO_STDERR ERR "No download URI found for app \"$PACKAGE\""
