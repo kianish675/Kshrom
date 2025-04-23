@@ -95,6 +95,65 @@ COPY_SOURCE_FIRMWARE()
             echo "/system_ext u:object_r:system_file:s0" >> "$WORK_DIR/configs/file_context-system_ext"
         fi
     fi
+
+    if $SOURCE_HAS_PRODUCT; then
+        if ! $TARGET_HAS_PRODUCT; then
+            if [ ! -d "$WORK_DIR/system/system/product" ]; then
+                rm -rf "$WORK_DIR/system/product"
+                rm -f "$WORK_DIR/system/system/product"
+                sed -i "/product/d" "$WORK_DIR/configs/file_context-system" \
+                    && sed -i "/product/d" "$WORK_DIR/configs/fs_config-system"
+                cp -a --preserve=all "$FW_DIR/${MODEL}_${REGION}/product" "$WORK_DIR/system/system"
+                ln -sf "/system/product" "$WORK_DIR/system/product"
+                echo "/product u:object_r:system_file:s0" >> "$WORK_DIR/configs/file_context-system"
+                echo "product 0 0 644 capabilities=0x0" >> "$WORK_DIR/configs/fs_config-system"
+                {
+                    sed "s/^\/product/\/system\/product/g" "$FW_DIR/${MODEL}_${REGION}/file_context-product"
+                } >> "$WORK_DIR/configs/file_context-system"
+                echo "system/product 0 0 755 capabilities=0x0" >> "$WORK_DIR/configs/fs_config-system"
+                {
+                    sed "1d" "$FW_DIR/${MODEL}_${REGION}/fs_config-product" | sed "s/^product/system\/product/g"
+                } >> "$WORK_DIR/configs/fs_config-system"
+                rm -f "$WORK_DIR/system/system/product/etc/NOTICE.xml.gz"
+                sed -i '/system\/product\/etc\/NOTICE\\.xml\\.gz/d' "$WORK_DIR/configs/file_context-system"
+                sed -i "/system\/product\/etc\/NOTICE.xml.gz/d" "$WORK_DIR/configs/fs_config-system"
+                rm -f "$WORK_DIR/system/system/product/etc/fs_config_dirs"
+                sed -i "/system\/product\/etc\/fs_config_dirs/d" "$WORK_DIR/configs/file_context-system"
+                sed -i "/system\/product\/etc\/fs_config_dirs/d" "$WORK_DIR/configs/fs_config-system"
+                rm -f "$WORK_DIR/system/system/product/etc/fs_config_files"
+                sed -i "/system\/product\/etc\/fs_config_files/d" "$WORK_DIR/configs/file_context-system"
+                sed -i "/system\/product\/etc\/fs_config_files/d" "$WORK_DIR/configs/fs_config-system"
+            fi
+        elif [ ! -d "$WORK_DIR/product" ]; then
+            mkdir -p "$WORK_DIR/product"
+            cp -a --preserve=all "$FW_DIR/${MODEL}_${REGION}/product" "$WORK_DIR"
+            cp --preserve=all "$FW_DIR/${MODEL}_${REGION}/file_context-product" "$WORK_DIR/configs"
+            cp --preserve=all "$FW_DIR/${MODEL}_${REGION}/fs_config-product" "$WORK_DIR/configs"
+        fi
+    else
+        if $TARGET_HAS_PRODUCT; then
+            # Create file structure: separate product and create new symlinks in rootdir and systemdir
+            cp -a -r --preserve=all "$FW_DIR/${MODEL}_${REGION}/system/system/product" "$WORK_DIR"
+            rm -rf "$WORK_DIR/system/system/product"
+            rm "$WORK_DIR/system/product"
+            mkdir "$WORK_DIR/system/product"
+            ln -s "/product" "$WORK_DIR/system/system/product"
+            # Create product filesystem configs file by extracting them from system config
+            grep 'product' "$FW_DIR/${MODEL}_${REGION}/fs_config-system" | sed 's/^system\///' | sed '/product 0 0 644 capabilities/d' | sed '/product 0 0 755 capabilities/d' >> "$WORK_DIR/configs/fs_config-product"
+            grep 'product' "$FW_DIR/${MODEL}_${REGION}/file_context-system" | sed '/product u:object_r:system_file:s0/d' | sed 's/^\/system//' >> "$WORK_DIR/configs/file_context-product"
+            # Remove all old product references in system
+            sed -i '/product/d' "$WORK_DIR/configs/fs_config-system"
+            sed -i '/product/d' "$WORK_DIR/configs/file_context-system"
+            # Add new symlink and folder config in system fs config
+            echo "/system/product u:object_r:system_file:s0" >> "$WORK_DIR/configs/file_context-system"
+            echo "/product u:object_r:system_file:s0" >> "$WORK_DIR/configs/file_context-system"
+            echo "system/product 0 0 644 capabilities=0x0" >> "$WORK_DIR/configs/fs_config-system"
+            echo "product 0 0 755 capabilities=0x0" >> "$WORK_DIR/configs/fs_config-system"
+            # Finish by setting the root configuration of product
+            echo " 0 0 755 capabilities=0x0" >> "$WORK_DIR/configs/fs_config-product"
+            echo "/product u:object_r:system_file:s0" >> "$WORK_DIR/configs/file_context-product"
+        fi
+    fi
 }
 
 COPY_TARGET_FIRMWARE()
