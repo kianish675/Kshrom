@@ -28,6 +28,10 @@ TARGET_OS_FILE_SYSTEM="erofs"
 TARGET_SUPER_PARTITION_SIZE=10385096704
 TARGET_SUPER_GROUP_SIZE=10380902400
 TARGET_HAS_SYSTEM_EXT=false
+# The Galaxy A70's product partition can't fit
+# a debloated product partition. Place it within
+# system instead.
+TARGET_HAS_PRODUCT=false
 
 # SEC Product Feature
 TARGET_AUDIO_SUPPORT_ACH_RINGTONE=false
