@@ -218,3 +218,18 @@ if [[ "$SOURCE_DVFS_CONFIG_NAME" != "$TARGET_DVFS_CONFIG_NAME" ]]; then
         sed -i "s/$SOURCE_DVFS_CONFIG_NAME/$TARGET_DVFS_CONFIG_NAME/g" "$APKTOOL_DIR/$f"
     done
 fi
+
+if [[ "$SOURCE_CODENAME" != "$TARGET_CODENAME" ]]; then
+    echo "Applying model detection patches"
+
+    DECODE_APK "system/framework/framework.jar"
+    DECODE_APK "system/framework/services.jar"
+
+    FTP="
+    system/framework/framework.jar/smali_classes6/com/samsung/android/rune/CoreRune.smali
+    system/framework/services.jar/smali/com/android/server/am/FreecessController.smali
+    "
+    for f in $FTP; do
+        sed -i "s/ro\.product\.model/ro\.product\.vendor\.model/g" "$APKTOOL_DIR/$f"
+    done
+fi
