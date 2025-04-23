@@ -123,7 +123,7 @@ fi
 echo -e "Updating $MODULE blobs\n"
 
 export SOURCE_FIRMWARE="$FIRMWARE"
-export TARGET_FIRMWARE="$FIRMWARE"
+export TARGET_FIRMWARE=""
 export SOURCE_EXTRA_FIRMWARES=""
 export TARGET_EXTRA_FIRMWARES=""
 "$SRC_DIR/scripts/download_fw.sh"

@@ -277,7 +277,7 @@ EXTRACT_ALL()
 }
 
 FIRMWARES=( "$SOURCE_FIRMWARE" )
-IFS=':' read -a SOURCE_EXTRA_FIRMWARES <<< "$TARGET_FIRMWARE"
+IFS=':' read -a TARGET_FIRMWARE <<< "$TARGET_FIRMWARE"
 if [ "${#TARGET_FIRMWARE[@]}" -ge 1 ]; then
     for i in "${TARGET_FIRMWARE[@]}"
     do
