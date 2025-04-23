@@ -208,6 +208,10 @@ while read -r i; do
     mv "$WORK_DIR/$PARTITION.img" "$TMP_DIR/$PARTITION.img"
 done <<< "$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d)"
 
+    echo "Copying prebuilt images"
+    cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/boot.img $TMP_DIR
+    cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/dtbo.img $TMP_DIR
+
 while read -r i; do
     PARTITION="$(basename "$i" | sed "s/.img//g")"
 
