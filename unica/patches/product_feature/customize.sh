@@ -57,29 +57,6 @@ if [[ "$SOURCE_AUTO_BRIGHTNESS_TYPE" != "$TARGET_AUTO_BRIGHTNESS_TYPE" ]]; then
     done
 fi
 
-if [[ "$(GET_FP_SENSOR_TYPE "$SOURCE_FP_SENSOR_CONFIG")" != "$(GET_FP_SENSOR_TYPE "$TARGET_FP_SENSOR_CONFIG")" ]]; then
-    echo "Applying fingerprint sensor patches"
-
-    DECODE_APK "system/framework/framework.jar"
-    DECODE_APK "system/framework/services.jar"
-    DECODE_APK "system/priv-app/SecSettings/SecSettings.apk"
-    DECODE_APK "system_ext/priv-app/SystemUI/SystemUI.apk"
-
-    FTP="
-    system/framework/framework.jar/smali_classes2/android/hardware/fingerprint/FingerprintManager.smali
-    system/framework/framework.jar/smali_classes2/android/hardware/fingerprint/HidlFingerprintSensorConfig.smali
-    system/framework/framework.jar/smali_classes5/com/samsung/android/bio/fingerprint/SemFingerprintManager.smali
-    system/framework/framework.jar/smali_classes5/com/samsung/android/bio/fingerprint/SemFingerprintManager\$Characteristics.smali
-    system/framework/framework.jar/smali_classes5/com/samsung/android/rune/CoreRune.smali
-    system/framework/framework.jar/smali_classes6/com/samsung/android/rune/InputRune.smali
-    system/framework/services.jar/smali/com/android/server/biometrics/sensors/fingerprint/FingerprintUtils.smali
-    system/priv-app/SecSettings/SecSettings.apk/smali_classes4/com/samsung/android/settings/biometrics/fingerprint/FingerprintSettingsUtils.smali
-    "
-    for f in $FTP; do
-        sed -i "s/$SOURCE_FP_SENSOR_CONFIG/$TARGET_FP_SENSOR_CONFIG/g" "$APKTOOL_DIR/$f"
-    done
-fi
-
 if [[ "$SOURCE_MDNIE_SUPPORTED_MODES" != "$TARGET_MDNIE_SUPPORTED_MODES" ]] || \
     [[ "$SOURCE_MDNIE_WEAKNESS_SOLUTION_FUNCTION" != "$TARGET_MDNIE_WEAKNESS_SOLUTION_FUNCTION" ]]; then
     echo "Applying mDNIe features patches"
