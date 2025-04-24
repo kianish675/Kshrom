@@ -143,9 +143,9 @@ _GET_SELINUX_LABEL()
     case "$PARTITION" in
         "product")
             if $TARGET_HAS_PRODUCT; then
-                FC_FILE="$WORK_DIR/product/etc/selinux/system_ext_file_contexts"
+                FC_FILE="$WORK_DIR/product/etc/selinux/product_file_contexts"
             else
-                FC_FILE="$WORK_DIR/system/system/product/etc/selinux/system_ext_file_contexts"
+                FC_FILE="$WORK_DIR/system/system/product/etc/selinux/product_file_contexts"
             fi
             ;;
         "vendor")
