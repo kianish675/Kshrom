@@ -142,7 +142,11 @@ _GET_SELINUX_LABEL()
 
     case "$PARTITION" in
         "product")
-            FC_FILE="$WORK_DIR/product/etc/selinux/product_file_contexts"
+            if $TARGET_HAS_PRODUCT; then
+                FC_FILE="$WORK_DIR/product/etc/selinux/system_ext_file_contexts"
+            else
+                FC_FILE="$WORK_DIR/system/system/product/etc/selinux/system_ext_file_contexts"
+            fi
             ;;
         "vendor")
             FC_FILE="$WORK_DIR/vendor/etc/selinux/vendor_file_contexts"
@@ -261,6 +265,22 @@ ADD_TO_WORK_DIR()
             FILE="system/system_ext/$FILE"
             TARGET_FILE+="/system/$FILE"
         fi
+    elif [[ "$PARTITION" == "product" ]]; then
+        if [ -d "$SOURCE/product" ]; then
+            SOURCE_FILE+="/product/$FILE"
+        elif [ -d "$SOURCE/system/system/product" ]; then
+            SOURCE_FILE+="/system/system/product/$FILE"
+        else
+            SOURCE_FILE+="/system/product/$FILE"
+        fi
+
+        if $TARGET_HAS_PRODUCT; then
+            TARGET_FILE+="/product/$FILE"
+        else
+            PARTITION="system"
+            FILE="system/product/$FILE"
+            TARGET_FILE+="/system/$FILE"
+        fi
     elif [[ "$PARTITION" == "system" ]]; then
         if [ -d "$SOURCE/system/system" ]; then
             SOURCE_FILE+="/system/$FILE"
@@ -335,6 +355,7 @@ ADD_TO_WORK_DIR()
         FILES="${FILES//$SOURCE\//}"
         [[ "$PARTITION" == "system" ]] && FILES="${FILES//system\/system\//system/}"
         $TARGET_HAS_SYSTEM_EXT || FILES="${FILES//system_ext\//system/system_ext/}"
+	$TARGET_HAS_PRODUCT || FILES="${FILES//product\//system/product/}"
 
         # shellcheck disable=SC2116
         for f in $(echo "$FILES"); do
@@ -451,6 +472,11 @@ DELETE_FROM_WORK_DIR()
         FILE="system/system_ext/$FILE"
     fi
 
+    if ! $TARGET_HAS_PRODUCT && [[ "$PARTITION" == "product" ]]; then
+        PARTITION="system"
+        FILE="system/product/$FILE"
+    fi
+
     local FILE_PATH="$WORK_DIR"
     case "$PARTITION" in
         "system_ext")
@@ -458,6 +484,13 @@ DELETE_FROM_WORK_DIR()
                 FILE_PATH+="/system_ext"
             else
                 FILE_PATH+="/system/system/system_ext"
+            fi
+            ;;
+        "product")
+            if $TARGET_HAS_PRODUCT; then
+                FILE_PATH+="/product"
+            else
+                FILE_PATH+="/system/system/product"
             fi
             ;;
         *)
@@ -762,7 +795,11 @@ SET_PROP()
                 FILE="$WORK_DIR/odm/etc/build.prop"
                 ;;
             "product")
-                FILE="$WORK_DIR/product/etc/build.prop"
+                if $TARGET_HAS_PRODUCT; then
+                    FILE="$WORK_DIR/product/etc/build.prop"
+                else
+                    FILE="$WORK_DIR/system/system/product/etc/build.prop"
+                fi
                 ;;
         esac
 
