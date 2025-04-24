@@ -104,7 +104,7 @@ system/etc/permissions/privapp-permissions-com.sec.android.soagent.xml
 system/etc/permissions/privapp-permissions-com.sec.bcservice.xml
 system/etc/permissions/privapp-permissions-com.sec.epdgtestapp.xml
 system/etc/permissions/privapp-permissions-com.sec.facatfunction.xml
-system/etc/permissions/privapp-permissions-com.sem.factoryapp.xml
+system/etc/permissions/privapp-permissions-com.sem.factoryapp.xmlz
 system/etc/permissions/privapp-permissions-com.wssyncmldm.xml
 system/etc/permissions/privapp-permissions-de.axelspringer.yana.zeropage.xml
 system/etc/permissions/privapp-permissions-meta.xml

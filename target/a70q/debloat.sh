@@ -71,6 +71,12 @@ system/priv-app/SCameraSDKService
 system/priv-app/VideoScan
 "
 
+# Single Take
+SYSTEM_DEBLOAT+="
+system/etc/permissions/privapp-permissions-com.samsung.android.singletake.service.xml
+system/priv-app/SingleTakeService
+"
+
 # Apps debloat
 SYSTEM_DEBLOAT+="
 system/etc/permissions/privapp-permissions-com.samsung.android.app.earphonetypec.xml
@@ -86,10 +92,15 @@ system/etc/permissions/org.carconnectivity.android.digitalkey.secureelement.xml
 SYSTEM_EXT_DEBLOAT+="
 app/QCC
 bin/qccsyshal@1.2-service
+etc/init/qspa_system.rc
+etc/init/usbudev.rc
 etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc
+etc/init/vendor.qti.hardware.qccsyshal_aidl-service.rc
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/privapp-permissions-com.qualcomm.location.xml
+etc/vintf/manifest/vendor.qti.hardware.systemhelperaidl.xml
+etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml
 framework/com.qti.location.sdk.jar
 framework/org.carconnectivity.android.digitalkey.rangingintent.jar
 framework/org.carconnectivity.android.digitalkey.secureelement.jar
