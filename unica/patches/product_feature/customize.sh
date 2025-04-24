@@ -142,10 +142,6 @@ fi
 if [[ "$SOURCE_HFR_SEAMLESS_BRT" != "$TARGET_HFR_SEAMLESS_BRT" ]] || \
     [[ "$SOURCE_HFR_SEAMLESS_LUX" != "$TARGET_HFR_SEAMLESS_LUX" ]]; then
     echo "Applying HFR_SEAMLESS_BRT/HFR_SEAMLESS_LUX patches"
-
-    if [[ "$TARGET_HFR_SEAMLESS_BRT" == "none" ]] && [[ "$TARGET_HFR_SEAMLESS_LUX" == "none" ]]; then
-        APPLY_PATCH "system/framework/framework.jar" "hfr/framework.jar/0001-Remove-brightness-threshold-values.patch"
-    else
         DECODE_APK "system/framework/framework.jar"
 
         FTP="
@@ -181,18 +177,6 @@ if [[ "$SOURCE_SSRM_CONFIG_NAME" != "$TARGET_SSRM_CONFIG_NAME" ]]; then
     "
     for f in $FTP; do
         sed -i "s/$SOURCE_SSRM_CONFIG_NAME/$TARGET_SSRM_CONFIG_NAME/g" "$APKTOOL_DIR/$f"
-    done
-fi
-if [[ "$SOURCE_DVFS_CONFIG_NAME" != "$TARGET_DVFS_CONFIG_NAME" ]]; then
-    echo "Applying DVFS patches"
-
-    DECODE_APK "system/framework/ssrm.jar"
-
-    FTP="
-    system/framework/ssrm.jar/smali/com/android/server/ssrm/Feature.smali
-    "
-    for f in $FTP; do
-        sed -i "s/$SOURCE_DVFS_CONFIG_NAME/$TARGET_DVFS_CONFIG_NAME/g" "$APKTOOL_DIR/$f"
     done
 fi
 
