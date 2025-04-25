@@ -74,7 +74,8 @@ EXTRACT_CSC_PARTITIONS()
         [ -f "${file%.lz4}" ] && continue
         tar tf "$CSC_TAR" "$file" &>/dev/null || continue
         echo "Extracting ${file%.img.lz4}"
-        tar xf "$CSC_TAR" "$file" && lz4 -d -q --rm "$file" "${file%.lz4}"
+        tar xf "$CSC_TAR" "$file" && lz4 -d -q --rm "$file" "${file%.lz4}.sparse"
+	simg2img "${file%.lz4}.sparse" "${file%.lz4}" && rm "${file%.lz4}.sparse"
 
         [ -d "tmp_out" ] && mountpoint -q "tmp_out" && sudo umount "tmp_out"
         mkdir -p "tmp_out"
