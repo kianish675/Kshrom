@@ -25,16 +25,6 @@ sed -i \
 sed -i "s/\"$SOURCE_PRODUCT_FIRST_API_LEVEL\"/\"$TARGET_PRODUCT_FIRST_API_LEVEL\"/g" "$APKTOOL_DIR/$f"
 done
 
-echo "Applying auto brightness type patches"
-FTP="
-system/framework/services.jar/smali_classes3/com/android/server/power/PowerManagerUtil.smali
-system/framework/ssrm.jar/smali/com/android/server/ssrm/PreMonitor.smali
-system/priv-app/SecSettings/SecSettings.apk/smali_classes4/com/samsung/android/settings/Rune.smali
-"
-for f in $FTP; do
-sed -i "s/\"$SOURCE_AUTO_BRIGHTNESS_TYPE\"/\"$TARGET_AUTO_BRIGHTNESS_TYPE\"/g" "$APKTOOL_DIR/$f"
-done
-fi
 
 echo "Applying mDNIe features patches"
 FTP="
