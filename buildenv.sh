@@ -103,48 +103,11 @@ export WORK_DIR="$OUT_DIR/work_dir"
 export TOOLS_DIR="$OUT_DIR/tools/bin"
 export PATH="$TOOLS_DIR:$PATH"
 
-TARGETS=()
-while IFS='' read -r t; do TARGETS+=("$t"); done < <(find "$SRC_DIR/target" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
-
-if [ "$#" -gt 1 ]; then
-    echo "Usage: source buildenv.sh <target>" >&2
-    echo "Available devices:" >&2
-    for t in "${TARGETS[@]}"
-    do
-        echo "$t" >&2
-    done
-    return 1
-elif [ "$#" -ne 1 ]; then
-    echo "No target specified. Please choose from the available devices below:"
-
-    select SELECTED_TARGET in "${TARGETS[@]}"; do
-        if [ -n "$SELECTED_TARGET" ]; then
-            break
-        else
-            echo "Invalid selection. Please try again."
-        fi
-    done
-else
-    SELECTED_TARGET="$1"
-fi
-
-if ! echo "${TARGETS[@]}" | grep -w -- "$SELECTED_TARGET" &> /dev/null; then
-    echo "\"$SELECTED_TARGET\" is not a valid device." >&2
-    echo "Available devices:" >&2
-    for t in "${TARGETS[@]}"
-    do
-        echo "$t" >&2
-    done
-    return 1
-fi
-
 mkdir -p "$OUT_DIR"
 run_cmd build_dependencies || return 1
 [ -f "$OUT_DIR/config.sh" ] && unset $(sed "/Automatically/d" "$OUT_DIR/config.sh" | cut -d= -f1)
-"$SRC_DIR/scripts/internal/gen_config_file.sh" "$SELECTED_TARGET" || return 1
+"$SRC_DIR/scripts/internal/gen_config_file.sh" "a70q" || return 1
 set -o allexport; source "$OUT_DIR/config.sh"; set +o allexport
-
-unset TARGETS SELECTED_TARGET
 
 echo "=============================="
 sed "/Automatically/d" "$OUT_DIR/config.sh"
