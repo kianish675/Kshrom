@@ -1,23 +1,3 @@
-# [
-APPLY_PATCH()
-{
-    local PATCH
-    local COMMIT_NAME
-    local OUT
-
-    DECODE_APK "$1"
-
-    cd "$APKTOOL_DIR/$1"
-    PATCH="$SRC_DIR/unica/mods/knoxpatch/$2"
-    COMMIT_NAME="$(grep "^Subject:" "$PATCH" | sed 's/.*PATCH] //')"
-    echo "Applying \"$COMMIT_NAME\" to /$1"
-    OUT="$(patch -p1 -s -t -N --dry-run < "$PATCH")" \
-        || echo "$OUT" | grep -q "Skipping patch" || false
-    patch -p1 -s -t -N --no-backup-if-mismatch < "$PATCH" &> /dev/null || true
-    cd - &> /dev/null
-}
-# ]
-
 DELETE_FROM_WORK_DIR "system" "system/etc/public.libraries-wsm.samsung.txt"
 DELETE_FROM_WORK_DIR "system" "system/lib/libhal.wsm.samsung.so"
 DELETE_FROM_WORK_DIR "system" "system/lib/vendor.samsung.hardware.security.wsm.service-V1-ndk.so"
