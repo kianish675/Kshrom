@@ -207,10 +207,8 @@ while read -r i; do
     mv "$WORK_DIR/$PARTITION.img" "$TMP_DIR/$PARTITION.img"
 done <<< "$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d)"
 
-    echo "Copying prebuilt images"
-    cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/boot.img $TMP_DIR
-    cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/dtbo.img $TMP_DIR
-    cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/product.img $TMP_DIR
+echo "Copying prebuilt images"
+cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/product.img $TMP_DIR
 
 while read -r i; do
     PARTITION="$(basename "$i" | sed "s/.img//g")"
@@ -229,6 +227,10 @@ while read -r i; do
     brotli --quality=6 --output="$TMP_DIR/$PARTITION.new.dat.br" "$TMP_DIR/$PARTITION.new.dat" \
         && rm "$TMP_DIR/$PARTITION.new.dat"
 done <<< "$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type f -name "*.img")"
+
+echo "Copying prebuilt kernel"
+cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/boot.img $TMP_DIR
+cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/dtbo.img $TMP_DIR
 
 echo "Generating updater-script"
 GENERATE_UPDATER_SCRIPT
