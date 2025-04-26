@@ -6,14 +6,14 @@ REGION=$(echo -n "${SOURCE_FIRMWARE[0]}" | cut -d "/" -f 2)
 echo "Setting up prism"
 
 echo "Debloating prism"
-rm -rf $FW_DIR/${MODEL}_${REGION}/system/app
-rm -rf $FW_DIR/${MODEL}_${REGION}/system/HWRDB
-rm -rf $FW_DIR/${MODEL}_${REGION}/system/media
-rm -rf $FW_DIR/${MODEL}_${REGION}/system/priv-app
+rm -rf $FW_DIR/${MODEL}_${REGION}/prism/app
+rm -rf $FW_DIR/${MODEL}_${REGION}/prism/HWRDB
+rm -rf $FW_DIR/${MODEL}_${REGION}/prism/media
+rm -rf $FW_DIR/${MODEL}_${REGION}/prism/priv-app
 
 echo "Settling up a prism symlink"
 rm -rf $WORK_DIR/system/prism
-ln -s /system/prism $WORK_DIR/system/system
+ln -s /system/prism $WORK_DIR/system/prism
 
 # Intentionally break the source firmwares file contexts to make our life easier
 {
@@ -34,7 +34,7 @@ echo "Setting up optics"
 
 echo "Settling up an optics symlink"
 rm -rf $WORK_DIR/system/optics
-ln -s /system/optics $WORK_DIR/system/system
+ln -s /system/optics $WORK_DIR/system/optics
 
 # Intentionally break the source firmwares file contexts to make our life easier
 {
