@@ -27,9 +27,13 @@ system/app/WifiRROverlayAppQC
 system/app/WifiRROverlayAppWifiLock
 "
 PRODUCT_DEBLOAT+="
-overlay/SoftapOverlay6GHz
-overlay/SoftapOverlayDualAp
-overlay/SoftapOverlayOWE
+overlay/framework-res__a36xqnsxx__auto_generated_rro_product.apk
+"
+
+# Google Assistant
+PRODUCT_DEBLOAT+="
+priv-app/HotwordEnrollmentXGoogleEx6_WIDEBAND_SMALL
+priv-app/HotwordEnrollmentYGoogleEx6_WIDEBAND_SMALL
 "
 
 # mAFPC
@@ -110,17 +114,6 @@ etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml
 framework/com.qti.location.sdk.jar
 framework/org.carconnectivity.android.digitalkey.rangingintent.jar
 framework/org.carconnectivity.android.digitalkey.secureelement.jar
-lib/libqcc.so
-lib/libqcc_file_agent_sys.so
-lib/libqccdme.so
-lib/libqccfileservice.so
-lib/vendor.qti.hardware.qccsyshal@1.0.so
-lib/vendor.qti.hardware.qccsyshal@1.1.so
-lib/vendor.qti.hardware.qccsyshal@1.2.so
-lib/vendor.qti.hardware.qccvndhal@1.0.so
-lib/vendor.qti.hardware.trustedui@1.1.so
-lib/vendor.qti.hardware.trustedui@1.2.so
-lib/vendor.qti.qccvndhal_aidl-V1-ndk.so
 lib64/libqcc.so
 lib64/libqcc_file_agent_sys.so
 lib64/libqccdme.so
