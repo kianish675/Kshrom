@@ -209,6 +209,7 @@ done <<< "$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d)"
 
 echo "Copying prebuilt images"
 cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/product.img $TMP_DIR
+cat $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/vendor.img.* $TMP_DIR/vendor.img
 
 while read -r i; do
     PARTITION="$(basename "$i" | sed "s/.img//g")"
