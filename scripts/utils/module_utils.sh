@@ -567,8 +567,6 @@ GET_GALAXY_STORE_DOWNLOAD_URL()
         return $?
     fi
 
-    done
-
     _ECHO_STDERR ERR "No download URI found for app \"$PACKAGE\""
     return 1
 }
