@@ -198,7 +198,6 @@ cp --preserve=all "$SRC_DIR/prebuilts/bootable/deprecated-ota/updater" "$TMP_DIR
 while read -r i; do
     PARTITION=$(basename "$i")
     [[ "$PARTITION" == "configs" ]] && continue
-    [[ "$PARTITION" == "kernel" ]] && continue
     [ -f "$TMP_DIR/$PARTITION.img" ] && rm -f "$TMP_DIR/$PARTITION.img"
     [ -f "$WORK_DIR/$PARTITION.img" ] && rm -f "$WORK_DIR/$PARTITION.img"
 
@@ -229,13 +228,6 @@ while read -r i; do
     brotli --quality=6 --output="$TMP_DIR/$PARTITION.new.dat.br" "$TMP_DIR/$PARTITION.new.dat" \
         && rm "$TMP_DIR/$PARTITION.new.dat"
 done <<< "$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type f -name "*.img")"
-
-while read -r i; do
-    IMG="$(basename "$i")"
-    echo "Copying $IMG"
-    [ -f "$TMP_DIR/$IMG" ] && rm -f "$TMP_DIR/$IMG"
-    cp -a --preserve=all "$i" "$TMP_DIR/$IMG"
-done <<< "$(find "$WORK_DIR/kernel" -mindepth 1 -maxdepth 1 -type f -name "*.img")"
 
 echo "Generating updater-script"
 GENERATE_UPDATER_SCRIPT
