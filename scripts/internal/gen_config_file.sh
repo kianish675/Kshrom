@@ -68,7 +68,11 @@ GEN_CONFIG_FILE()
         else
             echo "TARGET_ASSERT_MODEL=\"\""
         fi
-        echo "TARGET_FIRMWARE=\"${TARGET_FIRMWARE:?}\""
+        if [ "${#TARGET_FIRMWARE[@]}" -ge 1 ]; then
+            echo "TARGET_FIRMWARE=\"$( IFS=:; printf '%s' "${TARGET_FIRMWARE[*]}" )\""
+        else
+            echo "TARGET_FIRMWARE=\"\""
+        fi
         if [ "${#TARGET_EXTRA_FIRMWARES[@]}" -ge 1 ]; then
             echo "TARGET_EXTRA_FIRMWARES=\"$( IFS=:; printf '%s' "${TARGET_EXTRA_FIRMWARES[*]}" )\""
         else
