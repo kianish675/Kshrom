@@ -26,7 +26,7 @@ COPY_SOURCE_FIRMWARE()
     MODEL=$(echo -n "$SOURCE_FIRMWARE" | cut -d "/" -f 1)
     REGION=$(echo -n "$SOURCE_FIRMWARE" | cut -d "/" -f 2)
 
-    local COMMON_FOLDERS="product system"
+    local COMMON_FOLDERS="system"
     for folder in $COMMON_FOLDERS
     do
         if [ ! -d "$WORK_DIR/$folder" ]; then
