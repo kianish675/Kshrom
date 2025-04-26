@@ -24,7 +24,7 @@
     },
     
     "capture_segmentation": {
-        "Weightfile": "/vendor/etc/portrait_data/SRIB_HumanInsSeg_FP16_V007.snf",
+        "Weightfile": "/system/etc/portrait_data/SRIB_HumanInsSeg_FP16_V007.snf",
         "Version": "007",
         "ComputeUnit": "COMPUTE_GPU",
         "ExecutionDataType": "QASYMM8",
@@ -54,7 +54,7 @@
         "input_size": null
     },
     "preview_1st_segmentation": {
-        "Weightfile": "/vendor/etc/portrait_data/SRIB_HumanSegLite_INT8_V004.snf",
+        "Weightfile": "/system/etc/portrait_data/SRIB_HumanSegLite_INT8_V004.snf",
         "Version": "004",
         "ComputeUnit": "COMPUTE_GPU",
         "ExecutionDataType": "QASYMM8",
