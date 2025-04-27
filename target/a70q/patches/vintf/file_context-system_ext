@@ -1,0 +1,4 @@
+system_ext u:object_r:system_file:s0
+system_ext/etc u:object_r:system_file:s0
+system_ext/etc/vintf u:object_r:system_file:s0
+system_ext/etc/vintf/manifest\.xml u:object_r:system_file:s0

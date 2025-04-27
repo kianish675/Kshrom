@@ -1,0 +1,4 @@
+system_ext 0 0 755 capabilities=0x0
+system_ext/etc 0 0 755 capabilities=0x0
+system_ext/etc/vintf 0 0 755 capabilities=0x0
+system_ext/etc/vintf/manifest.xml 0 0 644 capabilities=0x0
