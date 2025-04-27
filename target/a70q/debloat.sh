@@ -49,11 +49,6 @@ system/etc/init/dhkprov.rc
 system/lib64/vendor.samsung.hardware.security.hdcp.keyprovisioning@1.0.so
 "
 
-# GameDriver
-SYSTEM_DEBLOAT+="
-system/priv-app/GameDriver-SM8550
-"
-
 # Camera SDK
 SYSTEM_DEBLOAT+="
 system/app/ApexService
