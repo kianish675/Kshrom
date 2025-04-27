@@ -51,8 +51,10 @@ etc/init/vendor_flash_recovery.rc
 PRODUCT_DEBLOAT+="
 app/Chrome64
 app/DuoStub
+app/Duo
 app/Gmail2
 app/Maps
+app/Photos
 app/YouTube
 overlay/GmsConfigOverlaySearchSelector.apk
 priv-app/SearchSelector
@@ -134,6 +136,7 @@ system/priv-app/ModemServiceMode
 system/priv-app/OneDrive_Samsung_v3
 system/priv-app/PaymentFramework
 system/priv-app/SEMFactoryApp
+system/priv-app/OMCAgent5
 system/priv-app/SOAgent75
 system/priv-app/SamsungCarKeyFw
 system/priv-app/SamsungPass

@@ -3,9 +3,9 @@ DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.sbrowser")" 
 DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.popupcalculator")" \
     "$WORK_DIR/system/system/preload/Calculator/Calculator.apk"
 DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.samsung.android.calendar")" \
-    "$WORK_DIR/system/system/preload/Calculator/Calendar.apk"
+    "$WORK_DIR/system/system/preload/Calendar/Calendar.apk"
 DOWNLOAD_FILE "$(GET_GALAXY_STORE_DOWNLOAD_URL "com.sec.android.app.clockpackage")" \
-    "$WORK_DIR/system/system/preload/Calculator/Clock.apk"
+    "$WORK_DIR/system/system/preload/Clock/Clock.apk"
 
 sed -i "/system\/preload/d" "$WORK_DIR/configs/fs_config-system" \
     && sed -i "/system\/preload/d" "$WORK_DIR/configs/file_context-system"
