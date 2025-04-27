@@ -4,6 +4,6 @@ echo "Deleting base cameradata"
 rm -r $WORK_DIR/system/system/cameradata
 
 echo "Adding target cameradata"
-cp -r $SRC_DIR/target/a70q/patches/cameradata/cameradata $WORK_DIR/system/system
+cp -r $SRC_DIR/target/a70q/patches/cameradata/system/cameradata $WORK_DIR/system/system
 
 echo "cameradata was successfully patched!"

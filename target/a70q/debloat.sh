@@ -27,7 +27,7 @@ system/app/WifiRROverlayAppQC
 system/app/WifiRROverlayAppWifiLock
 "
 PRODUCT_DEBLOAT+="
-overlay/framework-res__a36xqnsxx__auto_generated_rro_product.apk
+overlay/framework-res__a36xqnaxx__auto_generated_rro_product.apk
 "
 
 # Google Assistant

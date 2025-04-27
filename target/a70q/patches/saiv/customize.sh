@@ -1,4 +1,3 @@
-SKIP_UNZIP=1
 SOURCE_FIRMWARE_PATH="$FW_DIR/$(echo -n "$SOURCE_FIRMWARE" | sed 's./._.g' | rev | cut -d "_" -f2- | rev)"
 
 echo "Deleting base saiv"
