@@ -1,6 +1,0 @@
-/system u:object_r:system_file:s0
-/system/system_ext u:object_r:system_file:s0
-/system/system_ext/etc u:object_r:system_file:s0
-/system/system_ext/etc/selinux u:object_r:system_file:s0
-/system/system_ext/etc/selinux/mapping u:object_r:system_file:s0
-/system/system_ext/etc/selinux/mapping/30\.0\.cil u:object_r:system_file:s0
