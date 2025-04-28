@@ -12,6 +12,10 @@ sed -i 's/${ro.boot.warranty_bit}/0/g' "$WORK_DIR/system/system/etc/init/init.ri
         echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ro.product.first_api_level 32"
     fi
     echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n sys.oem_unlock_allowed 0"
+    echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n gsm.version.baseband A366BXXU1AYB9,A366BXXU1AYB9"
+    echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ril.product_code SM-A366BLVGEUE"
+    echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ril.sw_ver A366BXXU1AYB9"
+    echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n vendor.ril.product_code SM-A366BLVGEUE"
     echo ""
     echo "on property:sys.unica.vbmeta.digest=*"
     echo '    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ro.boot.vbmeta.digest ${sys.unica.vbmeta.digest}'
