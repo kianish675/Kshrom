@@ -56,13 +56,20 @@ PRINT_HEADER()
     echo -n 'ui_print("'
     echo -n "UN1CA-A70 Core Version $ROM_VERSION"
     echo    '");'
-    echo    'ui_print("Coded by salvo_giangri @XDAforums");'
+    echo    'ui_print("UN1CA-A70 by Tisenu100");'
+    echo    'ui_print("UN1CA base by salvo_giangri et al.,");'
     echo    'ui_print("****************************************");'
+    echo -n 'ui_print("'
+    echo -n "Base from: $(GET_PROP "ro.product.system.model" "$WORK_DIR/system/system/build.prop")"
+    echo    '");'
+    echo -n 'ui_print("'
+    echo -n "Base version: $(GET_PROP "ro.system.build.version.incremental" "$WORK_DIR/system/system/build.prop")"
+    echo    '");'
     echo -n 'ui_print("'
     echo -n "One UI version: $ONEUI_VERSION"
     echo    '");'
     echo -n 'ui_print("'
-    echo -n "Source: $(GET_PROP "ro.system.build.fingerprint" "$WORK_DIR/system/system/build.prop")"
+    echo -n "Fingerprint: $(GET_PROP "ro.system.build.fingerprint" "$WORK_DIR/system/system/build.prop")"
     echo    '");'
     echo    'ui_print("****************************************");'
 }
