@@ -640,7 +640,7 @@ system/lib u:object_r:system_lib_file:s0
 /system/lib/libpower\.so u:object_r:system_lib_file:s0
 /system/lib/libGLESv3\.so u:object_r:system_lib_file:s0
 /system/lib/libsembitmapregiondec_jni\.so u:object_r:system_lib_file:s0
-/system/lib/libc++\.so u:object_r:system_lib_file:s0
+/system/lib/libc\+\+\.so u:object_r:system_lib_file:s0
 /system/lib/android\.hardware\.graphics\.mapper@4\.0\.so u:object_r:system_lib_file:s0
 /system/lib/libimg_utils\.so u:object_r:system_lib_file:s0
 /system/lib/libRSCacheDir\.so u:object_r:system_lib_file:s0
@@ -686,7 +686,7 @@ system/lib u:object_r:system_lib_file:s0
 /system/lib/android\.hardware\.graphics\.composer3-V2-ndk\.so u:object_r:system_lib_file:s0
 /system/lib/libvkjni\.so u:object_r:system_lib_file:s0
 /system/lib/shared-file-region-aidl-cpp\.so u:object_r:system_lib_file:s0
-/system/lib/libstdc++\.so u:object_r:system_lib_file:s0
+/system/lib/libstdc\+\+\.so u:object_r:system_lib_file:s0
 /system/lib/libSEF\.quram\.so u:object_r:system_lib_file:s0
 /system/lib/android\.hardware\.gnss\.visibility_control@1\.0\.so u:object_r:system_lib_file:s0
 /system/lib/libcallstatemanager\.so u:object_r:system_lib_file:s0
