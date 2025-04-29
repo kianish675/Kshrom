@@ -146,13 +146,11 @@ GENERATE_UPDATER_SCRIPT()
         if $HAS_DTBO; then
             echo    'ui_print("Full Patching dtbo.img img...");'
             echo -n 'package_extract_file("dtbo.img", "'
-            echo -n "$TARGET_BOOT_DEVICE_PATH"
             echo    '/dev/block/bootdevice/by-name/dtbo");'
         fi
         if $HAS_BOOT; then
             echo    'ui_print("Installing boot image...");'
             echo -n 'package_extract_file("boot.img", "'
-            echo -n "$TARGET_BOOT_DEVICE_PATH"
             echo    '/dev/block/bootdevice/by-name/boot");'
         fi
 
