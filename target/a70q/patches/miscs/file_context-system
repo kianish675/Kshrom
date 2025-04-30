@@ -1,5 +1,5 @@
 /system u:object_r:system_file:s0
 /system/etc u:object_r:system_file:s0
 /system/etc/permissions u:object_r:system_file:s0
-/system/etc/permissions/com.sec.feature.nsflp_level_530\.xml u:object_r:system_file:s0
-/system/etc/permissions/com.sec.feature.sensorhub_level30\.xml u:object_r:system_file:s0
+/system/etc/permissions/com.sec.feature.nsflp\_level\_530\.xml u:object_r:system_file:s0
+/system/etc/permissions/com.sec.feature.sensorhub\_level30\.xml u:object_r:system_file:s0
