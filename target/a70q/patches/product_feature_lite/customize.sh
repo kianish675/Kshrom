@@ -1,3 +1,5 @@
+# Parrot Board
+
 DECODE_APK "system/framework/esecomm.jar"
 DECODE_APK "system/framework/services.jar"
 DECODE_APK "system/framework/ssrm.jar"
@@ -18,9 +20,9 @@ system/framework/services.jar/smali_classes2/com/android/server/sepunion/Engmode
 "
 for f in $FTP; do
 sed -i \
-"s/\"MAINLINE_API_LEVEL: $SOURCE_PRODUCT_FIRST_API_LEVEL\"/\"MAINLINE_API_LEVEL: $TARGET_PRODUCT_FIRST_API_LEVEL\"/g" \
+"s/\"MAINLINE_API_LEVEL: 35\"/\"MAINLINE_API_LEVEL: 30\"/g" \
 "$APKTOOL_DIR/$f"
-sed -i "s/\"$SOURCE_PRODUCT_FIRST_API_LEVEL\"/\"$TARGET_PRODUCT_FIRST_API_LEVEL\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"35\"/\"30\"/g" "$APKTOOL_DIR/$f"
 done
 
 
@@ -29,8 +31,8 @@ FTP="
 system/framework/services.jar/smali_classes2/com/samsung/android/hardware/display/SemMdnieManagerService.smali
 "
 for f in $FTP; do
-sed -i "s/\"$SOURCE_MDNIE_SUPPORTED_MODES\"/\"$TARGET_MDNIE_SUPPORTED_MODES\"/g" "$APKTOOL_DIR/$f"
-sed -i "s/\"$SOURCE_MDNIE_WEAKNESS_SOLUTION_FUNCTION\"/\"$TARGET_MDNIE_WEAKNESS_SOLUTION_FUNCTION\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"37905\"/\"46097\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"3\"/\"0\"/g" "$APKTOOL_DIR/$f"
 done
 
 
@@ -47,7 +49,7 @@ system/priv-app/SettingsProvider/SettingsProvider.apk/smali/com/android/provider
 system_ext/priv-app/SystemUI/SystemUI.apk/smali/com/android/systemui/LsRune.smali
 "
 for f in $FTP; do
-sed -i "s/\"$SOURCE_HFR_MODE\"/\"$TARGET_HFR_MODE\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"2\"/\"0\"/g" "$APKTOOL_DIR/$f"
 done
 
 
@@ -58,9 +60,9 @@ system/priv-app/SecSettings/SecSettings.apk/smali_classes4/com/samsung/android/s
 "
 for f in $FTP; do
 if [[ "$TARGET_HFR_SUPPORTED_REFRESH_RATE" != "none" ]]; then
-sed -i "s/\"$SOURCE_HFR_SUPPORTED_REFRESH_RATE\"/\"$TARGET_HFR_SUPPORTED_REFRESH_RATE\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"60,120\"/\"60\"/g" "$APKTOOL_DIR/$f"
 else
-sed -i "s/\"$SOURCE_HFR_SUPPORTED_REFRESH_RATE\"/\"\"/g" "$APKTOOL_DIR/$f"
+sed -i "s/\"60,120\"/\"\"/g" "$APKTOOL_DIR/$f"
 fi
 done
 
@@ -70,7 +72,7 @@ FTP="
 system/framework/framework.jar/smali_classes5/com/samsung/android/camera/mic/SemMultiMicManager.smali
 "
 for f in $FTP; do
-sed -i "s/$SOURCE_MULTI_MIC_MANAGER_VERSION/$TARGET_MULTI_MIC_MANAGER_VERSION/g" "$APKTOOL_DIR/$f"
+sed -i "s/08020/07002/g" "$APKTOOL_DIR/$f"
 done
 
 echo "Applying SSRM patches"
@@ -78,7 +80,7 @@ FTP="
 system/framework/ssrm.jar/smali/com/android/server/ssrm/Feature.smali
 "
 for f in $FTP; do
-sed -i "s/$SOURCE_SSRM_CONFIG_NAME/$TARGET_SSRM_CONFIG_NAME/g" "$APKTOOL_DIR/$f"
+sed -i "s/siop_a36xq_sm6475/ssrm_default/g" "$APKTOOL_DIR/$f"
 done
 
 
