@@ -52,7 +52,6 @@ system/lib64/vendor.samsung.hardware.security.hdcp.keyprovisioning@1.0.so
 # Face Unlock
 SYSTEM_DEBLOAT+="
 system/priv-app/FaceService
-system/etc/permissions/android.hardware.biometrics.face.xml
 "
 
 # Camera SDK
