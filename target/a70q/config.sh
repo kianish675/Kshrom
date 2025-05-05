@@ -18,7 +18,6 @@
 # Device configuration file for Galaxy A70 (a70q)
 TARGET_NAME="Galaxy A70"
 TARGET_CODENAME="a70q"
-TARGET_OS_FILE_SYSTEM="erofs"
 TARGET_HAS_SYSTEM_EXT=false
 # The Galaxy A70's product partition can't fit
 # a debloated product partition. Place it within
