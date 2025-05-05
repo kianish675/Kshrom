@@ -77,7 +77,6 @@ GEN_CONFIG_FILE()
         fi
         echo "TARGET_OS_FILE_SYSTEM=\"${TARGET_OS_FILE_SYSTEM:=erofs}\""
         echo "TARGET_INSTALL_METHOD=\"${TARGET_INSTALL_METHOD:=zip}\""
-        echo "TARGET_BOOT_DEVICE_PATH=\"${TARGET_BOOT_DEVICE_PATH:=/dev/block/bootdevice/by-name}\""
         echo "TARGET_INCLUDE_PATCHED_VBMETA=\"${TARGET_INCLUDE_PATCHED_VBMETA:=false}\""
         echo "TARGET_KEEP_ORIGINAL_SIGN=\"${TARGET_KEEP_ORIGINAL_SIGN:=false}\""
         echo "SOURCE_HAS_SYSTEM_EXT=\"${SOURCE_HAS_SYSTEM_EXT:?}\""
