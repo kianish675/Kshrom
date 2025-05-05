@@ -58,9 +58,6 @@ GEN_CONFIG_FILE()
         else
             echo "SOURCE_EXTRA_FIRMWARES=\"\""
         fi
-        echo "SOURCE_API_LEVEL=\"${SOURCE_API_LEVEL:?}\""
-        echo "SOURCE_PRODUCT_FIRST_API_LEVEL=\"${SOURCE_PRODUCT_FIRST_API_LEVEL:?}\""
-        echo "SOURCE_VNDK_VERSION=\"${SOURCE_VNDK_VERSION:?}\""
         echo "TARGET_NAME=\"${TARGET_NAME:?}\""
         echo "TARGET_CODENAME=\"${TARGET_CODENAME:?}\""
         if [ "${#TARGET_ASSERT_MODEL[@]}" -ge 1 ]; then
@@ -78,9 +75,6 @@ GEN_CONFIG_FILE()
         else
             echo "TARGET_EXTRA_FIRMWARES=\"\""
         fi
-        echo "TARGET_API_LEVEL=\"${TARGET_API_LEVEL:?}\""
-        echo "TARGET_PRODUCT_FIRST_API_LEVEL=\"${TARGET_PRODUCT_FIRST_API_LEVEL:?}\""
-        echo "TARGET_VNDK_VERSION=\"${TARGET_VNDK_VERSION:?}\""
         echo "TARGET_OS_FILE_SYSTEM=\"${TARGET_OS_FILE_SYSTEM:?}\""
         echo "TARGET_INSTALL_METHOD=\"${TARGET_INSTALL_METHOD:=zip}\""
         echo "TARGET_BOOT_DEVICE_PATH=\"${TARGET_BOOT_DEVICE_PATH:=/dev/block/bootdevice/by-name}\""
