@@ -12,20 +12,20 @@ body:
         Make sure not to submit a duplicate bug report, search for existing bug reports [here](https://github.com/salvogiangri/UN1CA/discussions/categories/bug-reports).
   - type: input
     attributes:
-      label: "UN1CA version:"
-      placeholder: 2.0.0-07d0046
+      label: "UN1CA-A70 version:"
+      placeholder: 2.5.6
     validations:
       required: true
   - type: input
     attributes:
       label: "Device name:"
-      placeholder: Galaxy A52s 5G
+      placeholder: Galaxy A70
     validations:
       required: true
   - type: input
     attributes:
       label: "Device model number:"
-      placeholder: SM-A528B
+      placeholder: SM-A705FN
     validations:
       required: true
   - type: textarea
