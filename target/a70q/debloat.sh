@@ -20,12 +20,12 @@
 # - DO NOT add the partition name at the start of any entry (eg. "/system/dpolicy_system")
 # - DO NOT add a slash at the start of any entry (eg. "/dpolicy_system")
 
-# Overlays
+# Wi-Fi Overlay
 SYSTEM_DEBLOAT+="
 system/app/WifiRROverlayAppH2E
-system/app/WifiRROverlayAppQC
-system/app/WifiRROverlayAppWifiLock
 "
+
+# Device Specific Overlay
 PRODUCT_DEBLOAT+="
 overlay/framework-res__a36xqnaxx__auto_generated_rro_product.apk
 "
@@ -36,19 +36,6 @@ priv-app/HotwordEnrollmentXGoogleEx6_WIDEBAND_SMALL
 priv-app/HotwordEnrollmentYGoogleEx6_WIDEBAND_SMALL
 "
 
-# mAFPC
-SYSTEM_DEBLOAT+="
-system/bin/mafpc_write
-"
-
-# HDCP
-SYSTEM_DEBLOAT+="
-system/bin/dhkprov
-system/bin/qchdcpkprov
-system/etc/init/dhkprov.rc
-system/lib64/vendor.samsung.hardware.security.hdcp.keyprovisioning@1.0.so
-"
-
 # Face Unlock
 SYSTEM_DEBLOAT+="
 system/priv-app/FaceService
@@ -56,23 +43,10 @@ system/priv-app/FaceService
 
 # Camera SDK
 SYSTEM_DEBLOAT+="
-system/app/ApexService
-system/bin/apexserver
-system/etc/init/apexserver.qcom.rc
 system/etc/default-permissions/default-permissions-com.samsung.android.globalpostprocmgr.xml
-system/etc/default-permissions/default-permissions-com.samsung.petservice.xml
-system/etc/default-permissions/default-permissions-com.samsung.videoscan.xml
-system/etc/permissions/cameraservice.xml
 system/etc/permissions/privapp-permissions-com.samsung.android.globalpostprocmgr.xml
-system/etc/permissions/privapp-permissions-com.samsung.petservice.xml
-system/etc/permissions/privapp-permissions-com.samsung.videoscan.xml
-system/framework/scamera_sep.jar
-system/lib64/libamex.so
 system/lib64/libppvdis_wrapper.so
 system/priv-app/GlobalPostProcMgr
-system/priv-app/PetService
-system/priv-app/SCameraSDKService
-system/priv-app/VideoScan
 "
 
 # Single Take
@@ -94,18 +68,20 @@ system/priv-app/EarphoneTypeC
 system/priv-app/SohService
 "
 
-# system_ext clean-up
+# Android Car
 SYSTEM_DEBLOAT+="
 system/etc/permissions/org.carconnectivity.android.digitalkey.rangingintent.xml
 system/etc/permissions/org.carconnectivity.android.digitalkey.secureelement.xml
 "
+
+# Qualcomm Specific Services
 SYSTEM_EXT_DEBLOAT+="
 app/QCC
 bin/qccsyshal@1.2-service
 etc/init/qspa_system.rc
 etc/init/usbudev.rc
 etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc
-etc/init/vendor.qti.hardware.qccsyshal_aidl-service.rc
+etc/init/vendor.qti.qccsyshal_aidl-service.rc
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/privapp-permissions-com.qualcomm.location.xml
@@ -123,8 +99,6 @@ lib64/vendor.qti.hardware.qccsyshal@1.1.so
 lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so
 lib64/vendor.qti.hardware.qccsyshal@1.2.so
 lib64/vendor.qti.hardware.qccvndhal@1.0.so
-lib64/vendor.qti.hardware.trustedui@1.1.so
-lib64/vendor.qti.hardware.trustedui@1.2.so
 lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 priv-app/com.qualcomm.location
 priv-app/com.qualcomm.qti.services.systemhelper
