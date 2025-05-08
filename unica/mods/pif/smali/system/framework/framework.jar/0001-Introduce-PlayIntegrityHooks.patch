@@ -190,11 +190,11 @@ index 00000000..0d5593e1
 +
 +.field private static final blacklist PIF_BRAND:Ljava/lang/String; = "google"
 +
-+.field private static final blacklist PIF_DEVICE:Ljava/lang/String; = "shiba"
++.field private static final blacklist PIF_DEVICE:Ljava/lang/String; = "tegu"
 +
 +.field private static final blacklist PIF_DEVICE_INITIAL_SDK_INT:Ljava/lang/String; = "null"
 +
-+.field private static final blacklist PIF_FINGERPRINT:Ljava/lang/String; = "google/shiba_beta/shiba:16/BP22.250221.015/13278879:user/release-keys"
++.field private static final blacklist PIF_FINGERPRINT:Ljava/lang/String; = "google/tegu_beta/tegu:16/BP22.250325.007/13352765:user/release-keys"
 +
 +.field private static final blacklist PIF_ID:Ljava/lang/String; = "null"
 +
@@ -202,15 +202,15 @@ index 00000000..0d5593e1
 +
 +.field private static final blacklist PIF_MANUFACTURER:Ljava/lang/String; = "Google"
 +
-+.field private static final blacklist PIF_MODEL:Ljava/lang/String; = "Pixel 8"
++.field private static final blacklist PIF_MODEL:Ljava/lang/String; = "Pixel 9a"
 +
-+.field private static final blacklist PIF_PRODUCT:Ljava/lang/String; = "shiba_beta"
++.field private static final blacklist PIF_PRODUCT:Ljava/lang/String; = "tegu_beta"
 +
 +.field private static final blacklist PIF_RELEASE:Ljava/lang/String; = "null"
 +
 +.field private static final blacklist PIF_SECURITY_PATCH:Ljava/lang/String; = "null"
 +
-+.field private static final blacklist PIF_VERSION:Ljava/lang/String; = "20250406"
++.field private static final blacklist PIF_VERSION:Ljava/lang/String; = "20250417"
 +
 +.field private static final blacklist TAG:Ljava/lang/String; = "PlayIntegrityHooks"
 +
@@ -829,7 +829,7 @@ index 00000000..0d5593e1
 +
 +    move-result-object v0
 +
-+    const-string v1, ", Frameworks version: 20250406"
++    const-string v1, ", Frameworks version: 20250417"
 +
 +    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 +
@@ -844,7 +844,7 @@ index 00000000..0d5593e1
 +    :cond_0
 +    const-string v0, "persist.sys.pif.product"
 +
-+    const-string v1, "shiba_beta"
++    const-string v1, "tegu_beta"
 +
 +    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
@@ -881,7 +881,7 @@ index 00000000..0d5593e1
 +    :cond_1
 +    const-string v0, "persist.sys.pif.device"
 +
-+    const-string v2, "shiba"
++    const-string v2, "tegu"
 +
 +    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
@@ -986,7 +986,7 @@ index 00000000..0d5593e1
 +    :cond_4
 +    const-string v0, "persist.sys.pif.model"
 +
-+    const-string v2, "Pixel 8"
++    const-string v2, "Pixel 9a"
 +
 +    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
@@ -1120,7 +1120,7 @@ index 00000000..0d5593e1
 +    :cond_8
 +    const-string v0, "persist.sys.pif.fingerprint"
 +
-+    const-string v2, "google/shiba_beta/shiba:16/BP22.250221.015/13278879:user/release-keys"
++    const-string v2, "google/tegu_beta/tegu:16/BP22.250325.007/13352765:user/release-keys"
 +
 +    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
