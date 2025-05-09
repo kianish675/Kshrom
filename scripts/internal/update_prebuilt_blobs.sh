@@ -92,7 +92,7 @@ export TARGET_FIRMWARE=""
 export SOURCE_EXTRA_FIRMWARES=""
 export TARGET_EXTRA_FIRMWARES=""
 "$SRC_DIR/scripts/download_fw.sh"
-"$SRC_DIR/scripts/extract_fw.sh"
+"$SRC_DIR/scripts/extract_fw_legacy.sh"
 
 for i in $BLOBS; do
     if [[ "$i" == *[0-9] ]]; then
