@@ -63,47 +63,12 @@ if [ -d "$MODULE/system_ext" ]; then
 fi
 
 case "$1" in
-    "prebuilts/samsung/a52qnsxx")
-        FIRMWARE="SM-A525F/SER/352938771234569"
+    "prebuilts/samsung/a52q")
+        FIRMWARE="SM-A525F/EUX/352938776816808"
         ;;
-    "prebuilts/samsung/a52sxqxx")
-        FIRMWARE="SM-A528B/BTU/352599501234566"
-        ;;
-    "prebuilts/samsung/a73xqxx")
-        FIRMWARE="SM-A736B/XME/352828291234563"
-        ;;
-    "prebuilts/samsung/b5qxxx")
-        FIRMWARE="SM-F731B/EUX/350929871234569"
-        ;;
-    "prebuilts/samsung/dm1qkdiw")
-        FIRMWARE="SCG19/KDI/RFCW320SDNY"
-        ;;
-    "prebuilts/samsung/dm3qxxx")
-        FIRMWARE="SM-S918B/EUX/350196551234562"
-        ;;
-    "prebuilts/samsung/e1qzcx")
-        FIRMWARE="SM-S9210/CHC/356724910402671"
-        ;;
-    "prebuilts/samsung/gts9xxx")
-        FIRMWARE="SM-X716B/EUX/353439961234567"
-        ;;
-    "prebuilts/samsung/r0qxxx")
-        FIRMWARE="SM-S901E/INS/350999641234561"
-        ;;
-    "prebuilts/samsung/r9qxxx")
-        FIRMWARE="SM-G990B/EUX/353718681234563"
-        ;;
-    "prebuilts/samsung/r11sxxx")
-        FIRMWARE="SM-S711B/EUX/358615311234564"
-        ;;
-    "target/dm1q/patches/china")
-        FIRMWARE="SM-S9110/TGY/RFCW2198XNF"
-        ;;
-    "target/dm2q/patches/china")
-        FIRMWARE="SM-S9160/TGY/R5CW22FT58F"
-        ;;
-    "target/dm3q/patches/china")
-        FIRMWARE="SM-S9180/TGY/R5CW613B3ME"
+    "prebuilts/samsung/a70q")
+        echo "Quasi folder. Can't do that!"
+        exit 1
         ;;
     *)
         echo "Firmware not set for path $1"
