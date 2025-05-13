@@ -16,6 +16,7 @@ sed -i 's/${ro.boot.warranty_bit}/0/g' "$WORK_DIR/system/system/etc/init/init.ri
     echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ril.product_code SM-A366BLVGEUE"
     echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ril.sw_ver A366BXXU1AYB9"
     echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n vendor.ril.product_code SM-A366BLVGEUE"
+    echo "    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ro.boot.em.model SM-A366B"
     echo ""
     echo "on property:sys.unica.vbmeta.digest=*"
     echo '    exec u:r:init:s0 root root -- /system/bin/rezetprop -n ro.boot.vbmeta.digest ${sys.unica.vbmeta.digest}'
