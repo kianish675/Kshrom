@@ -36,7 +36,6 @@ while [ "$#" != 0 ]; do
             ;;
         "--no-rom-zip")
                 BUILD_ZIP=false
-            fi
             ;;
         *)
             echo "Usage: make_rom [options]"
