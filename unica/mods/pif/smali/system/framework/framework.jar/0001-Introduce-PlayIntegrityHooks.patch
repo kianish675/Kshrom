@@ -194,7 +194,7 @@ index 00000000..0d5593e1
 +
 +.field private static final blacklist PIF_DEVICE_INITIAL_SDK_INT:Ljava/lang/String; = "null"
 +
-+.field private static final blacklist PIF_FINGERPRINT:Ljava/lang/String; = "google/tegu_beta/tegu:16/BP22.250325.007/13352765:user/release-keys"
++.field private static final blacklist PIF_FINGERPRINT:Ljava/lang/String; = "google/tegu_beta/tegu:16/BP31.250502.008/13497110:user/release-keys"
 +
 +.field private static final blacklist PIF_ID:Ljava/lang/String; = "null"
 +
@@ -210,7 +210,7 @@ index 00000000..0d5593e1
 +
 +.field private static final blacklist PIF_SECURITY_PATCH:Ljava/lang/String; = "null"
 +
-+.field private static final blacklist PIF_VERSION:Ljava/lang/String; = "20250417"
++.field private static final blacklist PIF_VERSION:Ljava/lang/String; = "20250520"
 +
 +.field private static final blacklist TAG:Ljava/lang/String; = "PlayIntegrityHooks"
 +
@@ -829,7 +829,7 @@ index 00000000..0d5593e1
 +
 +    move-result-object v0
 +
-+    const-string v1, ", Frameworks version: 20250417"
++    const-string v1, ", Frameworks version: 20250520"
 +
 +    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 +
@@ -1120,7 +1120,7 @@ index 00000000..0d5593e1
 +    :cond_8
 +    const-string v0, "persist.sys.pif.fingerprint"
 +
-+    const-string v2, "google/tegu_beta/tegu:16/BP22.250325.007/13352765:user/release-keys"
++    const-string v2, "google/tegu_beta/tegu:16/BP31.250502.008/13497110:user/release-keys"
 +
 +    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
