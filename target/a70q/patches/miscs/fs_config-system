@@ -1,5 +1,7 @@
 system 0 0 755 capabilities=0x0
 system/etc 0 0 755 capabilities=0x0
+system/etc/init 0 0 755 capabilities=0x0
 system/etc/permissions 0 0 755 capabilities=0x0
+system/etc/init/rscmgr.rc 0 0 644 capabilities=0x0
 system/etc/permissions/com.sec.feature.nsflp_level_530.xml 0 0 644 capabilities=0x0
 system/etc/permissions/com.sec.feature.sensorhub_level30.xml 0 0 644 capabilities=0x0
