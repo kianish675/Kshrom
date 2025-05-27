@@ -206,8 +206,8 @@ while read -r i; do
 done <<< "$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d)"
 
 echo "Copying prebuilt images"
-cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/product.img $TMP_DIR
-cat $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/vendor.img.* >> $TMP_DIR/vendor.img
+cp $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/product.img $TMP_DIR
+cat $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/vendor.img.* >> $TMP_DIR/vendor.img
 
 while read -r i; do
     PARTITION="$(basename "$i" | sed "s/.img//g")"
@@ -228,8 +228,8 @@ while read -r i; do
 done <<< "$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type f -name "*.img")"
 
 echo "Copying prebuilt kernel"
-cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/boot.img $TMP_DIR
-cp $SRC_DIR/prebuilts/samsung/$TARGET_CODENAME/dtbo.img $TMP_DIR
+cp $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/boot.img $TMP_DIR
+cp $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/dtbo.img $TMP_DIR
 
 echo "Generating updater-script"
 GENERATE_UPDATER_SCRIPT
