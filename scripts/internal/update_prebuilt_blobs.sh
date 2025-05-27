@@ -63,8 +63,8 @@ if [ -d "$MODULE/system_ext" ]; then
 fi
 
 case "$1" in
-    "prebuilts/samsung/a52q")
-        FIRMWARE="SM-A525F/EUX/352938776816808"
+    "prebuilts/samsung/a73xq")
+        FIRMWARE="SM-A736B/SER/RZCT91Q491X"
         ;;
     "prebuilts/samsung/a70q")
         echo "Quasi folder. Can't do that!"
