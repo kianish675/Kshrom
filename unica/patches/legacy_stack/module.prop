@@ -1,0 +1,4 @@
+id=legacy_stack
+name=Legacy stack application
+author=Tisenu100
+description=Readds legacy components back for ARMv9 firmwares.
