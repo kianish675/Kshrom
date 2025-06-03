@@ -228,8 +228,8 @@ while read -r i; do
 done <<< "$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type f -name "*.img")"
 
 echo "Copying prebuilt kernel"
-lz4 -c -d $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/boot.img $TMP_DIR/boot.img
-lz4 -c -d $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/dtbo.img $TMP_DIR/dtbo.img
+lz4 -d $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/boot.img.lz4 $TMP_DIR/boot.img
+lz4 -d $SRC_DIR/target/$TARGET_CODENAME/prebuilt_images/dtbo.img.lz4 $TMP_DIR/dtbo.img
 
 echo "Generating updater-script"
 GENERATE_UPDATER_SCRIPT
