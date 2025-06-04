@@ -23,5 +23,3 @@ prebuilts/bootable/deprecated-ota/updater binary
 prebuilts/*/*/*/** binary
 unica/mods/pif/system/bin/rezetprop binary
 
-# Device-specific prebuilt blobs
-target/a73xq/patches/wpss/vendor/firmware/** binary
