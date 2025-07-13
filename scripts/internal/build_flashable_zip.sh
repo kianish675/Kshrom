@@ -99,14 +99,13 @@ GENERATE_UPDATER_SCRIPT()
     local HAS_SYSTEM=false
     local HAS_VENDOR=false
     local HAS_PRODUCT=false
-    local HAS_POST_INSTALL=false
 
+# Normally not needed for a hardcoded install but just to be sure
     [ -f "$TMP_DIR/boot.img" ] && HAS_BOOT=true
     [ -f "$TMP_DIR/dtbo.img" ] && HAS_DTBO=true
     [ -f "$TMP_DIR/system.new.dat.br" ] && HAS_SYSTEM=true
-    [ -f "$TMP_DIR/vendor.new.dat.br" ] && HAS_VENDOR=true && PARTITION_COUNT=$((PARTITION_COUNT + 1))
-    [ -f "$TMP_DIR/product.new.dat.br" ] && HAS_PRODUCT=true && PARTITION_COUNT=$((PARTITION_COUNT + 1))
-    [ -f "$SRC_DIR/target/$TARGET_CODENAME/postinstall.edify" ] && HAS_POST_INSTALL=true
+    [ -f "$TMP_DIR/vendor.new.dat.br" ] && HAS_VENDOR=true
+    [ -f "$TMP_DIR/product.new.dat.br" ] && HAS_PRODUCT=true
 
     [ -f "$SCRIPT_FILE" ] && rm -f "$SCRIPT_FILE"
     touch "$SCRIPT_FILE"
@@ -123,9 +122,7 @@ GENERATE_UPDATER_SCRIPT()
         if $HAS_SYSTEM; then
             echo -e "\n# Patch partition system\n"
             echo    'ui_print("Patching system image unconditionally...");'
-            echo -n 'show_progress(0.'
-            echo "9 - $PARTITION_COUNT" | bc -l | tr -d "\n"
-            echo    '00000, 0);'
+            echo -n 'show_progress(0.500000, 0);'
             echo    'block_image_update("/dev/block/platform/soc/1d84000.ufshc/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat.br", "system.patch.dat") ||'
             echo    '  abort("E1001: Failed to update system image.");'
         fi
@@ -152,10 +149,6 @@ GENERATE_UPDATER_SCRIPT()
             echo    'ui_print("Installing boot image...");'
             echo -n 'package_extract_file("boot.img", "'
             echo    '/dev/block/bootdevice/by-name/boot");'
-        fi
-
-        if $HAS_POST_INSTALL; then
-            cat "$SRC_DIR/target/$TARGET_CODENAME/postinstall.edify"
         fi
 
         echo    'set_progress(1.000000);'
