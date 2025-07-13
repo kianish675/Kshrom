@@ -141,11 +141,12 @@ EXTRACT_OS_PARTITIONS()
 
     local SHOULD_EXTRACT=false
     local SHOULD_EXTRACT_SUPER=false
+    local PARTITION_MASK=".img"
 
     echo "- Extracting OS partitions..."
     cd "$FW_DIR/${MODEL}_${REGION}"
 
-    local COMMON_FOLDERS="odm_a product_a system_a vendor_a"
+    local COMMON_FOLDERS="odm product system vendor"
     for folder in $COMMON_FOLDERS
     do
         [ ! -d "$folder" ] && SHOULD_EXTRACT=true
@@ -160,6 +161,12 @@ EXTRACT_OS_PARTITIONS()
             simg2img "super.img.sparse" "super.img" && rm "super.img.sparse"
             { lpunpack "super.img" > /dev/null; } 2>&1
             lpdump "super.img" > "lpdump" && rm "super.img"
+
+	    if [ -f "system_a.img" ]; then
+		echo "Dyanamic Partitions Detected!"
+		COMMON_FOLDERS="odm_a product_a system_a vendor_a"
+		PARTITION_MASK="_a.img"
+	    fi
         fi
 
         [ -d "tmp_out" ] && mountpoint -q "tmp_out" && sudo umount "tmp_out"
@@ -167,7 +174,7 @@ EXTRACT_OS_PARTITIONS()
         for img in *.img
         do
             local PREFIX=""
-            local PARTITION="${img%_a.img}"
+            local PARTITION="${img%$PARTITION_MASK}"
 
             case "$(GET_IMG_FS_TYPE "$img")" in
                 "erofs")
