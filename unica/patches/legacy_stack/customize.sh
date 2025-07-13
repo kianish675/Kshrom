@@ -13,5 +13,5 @@ ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/bin/linker_asan" 0 20
 ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/bin/remotedisplay" 0 2000 755 "u:object_r:remotedisplay_exec:s0"
 ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/lib" 0 0 755 "u:object_r:system_lib_file:s0"
 ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/system_ext/apex/com.android.vndk.v30.apex" 0 0 644 "u:object_r:system_file:s0"
-ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/system_ext/lib" 0 0 755 "u:object_r:system_file:s0"
+#ADD_TO_WORK_DIR "$SOURCE_EXTRA_FIRMWARES" "system" "system/system_ext/lib" 0 0 755 "u:object_r:system_file:s0"
 echo "Legacy stack was applied successfully!"
