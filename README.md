@@ -7,6 +7,8 @@
 # Base:
 UN1CA-A70 aims to bring in a pure OneUI implementation with UN1CA Core patches applied
 
+<b>YOU MUST BUILD THIS ROM FROM SOURCE! AVOID USING PREBUILT FIRMWARES!</b>
+
 # Licensing:
 UN1CA-A70 abides to the GPLv3 license like the original project
 
