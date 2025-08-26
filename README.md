@@ -7,7 +7,7 @@
 Your warranty is now **void**.  
 I am **not responsible** for bricked devices, dead SD cards, or anything else that goes wrong.  
 
-⚠️ **This is BETA! Do not use as your main!**
+⚠️ **This is BETA! Do not use as your main! YOU HAVE BEEN WARNED.**
 
 ---
 
