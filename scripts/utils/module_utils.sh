@@ -560,7 +560,7 @@ GET_GALAXY_STORE_DOWNLOAD_URL()
     local PACKAGE="$1"
     local OUT
 
-    OUT="$(curl -L -s "https://vas.samsungapps.com/stub/stubDownload.as?appId=$PACKAGE&deviceId=SM-A736B&mcc=505&mnc=03&csc=CAU&sdkVer=35&extuk=a59839d085b95518&pd=0")"
+    OUT="$(curl -L -s "https://vas.samsungapps.com/stub/stubDownload.as?appId=$PACKAGE&deviceId=SM-A736B&mcc=505&mnc=03&csc=CAL&sdkVer=35&extuk=a59839d085b95518&pd=0")"
 
     if grep -q "Download URI Available" <<< "$OUT"; then
         grep "downloadURI" <<< "$OUT" | cut -d ">" -f 2 | sed -e 's/<!\[CDATA\[//g; s/\]\]//g'
