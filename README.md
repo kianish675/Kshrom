@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img loading="lazy" src="readme-res/banner.png"/>
-</h1>
+![KshROM Banner](readme-res/banner.png)
 
 <p align="center">KshROM is a fork of UN1CA-A70 for the Galaxy A70</p>
 
