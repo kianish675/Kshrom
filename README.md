@@ -74,7 +74,7 @@ This is my first ever personal project. I’m still learning and some features m
    - Return to menu → **Apply update → Apply from ADB**  
 7. On PC:  
    - Linux → `sudo apt install adb && adb sideload rom.zip`  
-   - Windows → Use **SDK Platform Tools**  
+   - Windows → Use **SDK Platform Tools** and do **adb sideload rom.zip**
 8. Wait for installation to finish.  
 9. Reboot and enjoy.
 
