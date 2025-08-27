@@ -86,7 +86,7 @@ This is my first ever personal project. I’m still learning and some features m
 - **@salvogiangri** — UN1CA Project, KnoxPatch  
 - **@nookgit12** — Build assistance  
 - **LineageOS Team** — For keeping SM6150 devices alive  
-- **@ExtremeXT** — Bluetooth Library Patch Support for One UI 7 Devices  
+- **@ExtremeXT** — Bluetooth Library Patch Support for One UI 7 Devices, Patches from ExtremeROM
 - **@3arthur6** — Bluetooth Library Patch  
 
 ---
