@@ -51,28 +51,18 @@ PRINT_HEADER()
         ONEUI_VERSION="$MAJOR.$MINOR"
     fi
 
-echo    'ui_print(" ");'
-    echo    'ui_print("****************************************");'
-    echo -n 'ui_print("'
-    echo -n "UN1CA-A70 Core Version $ROM_VERSION"
-    echo    '");'
-    echo    'ui_print("Kshrom by Kianish");'
-    echo    'ui_print("UN1CA by salvo_giangri et al., Based off UN1CA-A70 and its patches, mods by Tisenu100 ");'
-    echo    'ui_print("****************************************");'
-    echo -n 'ui_print("'
-    echo -n "Base: $(GET_PROP "ro.product.system.model" "$WORK_DIR/system/system/build.prop")"
-    echo    '");'
-    echo -n 'ui_print("'
-    echo -n "Version (Base): $(GET_PROP "ro.system.build.version.incremental" "$WORK_DIR/system/system/build.prop")"
-    echo    '");'
-    echo -n 'ui_print("'
-    echo -n "One UI $ONEUI_VERSION"
-    echo    '");'
-    echo -n 'ui_print("'
-    echo -n "Fingerprint: $(GET_PROP "ro.system.build.fingerprint" "$WORK_DIR/system/system/build.prop")"
-    echo    '");'
-    echo    'ui_print("****************************************");'
-}
+echo 'ui_print(" ");'
+echo 'ui_print("****************************************");'
+echo "ui_print(\"UN1CA-A70 Core Version $ROM_VERSION\");"
+echo 'ui_print("Kshrom by Kianish");'
+echo 'ui_print("UN1CA by salvo_giangri et al., Based off UN1CA-A70 and its patches, mods by Tisenu100");'
+echo 'ui_print("****************************************");'
+echo "ui_print(\"Base: $(GET_PROP 'ro.product.system.model' "$WORK_DIR/system/system/build.prop")\");"
+echo "ui_print(\"Version (Base): $(GET_PROP 'ro.system.build.version.incremental' "$WORK_DIR/system/system/build.prop")\");"
+echo "ui_print(\"One UI $ONEUI_VERSION\");"
+echo "ui_print(\"Fingerprint: $(GET_PROP 'ro.system.build.fingerprint' "$WORK_DIR/system/system/build.prop")\");"
+echo 'ui_print("****************************************");'
+
 
 GET_SPARSE_IMG_SIZE()
 {
