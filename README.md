@@ -81,8 +81,8 @@ This is my first ever personal project. I’m still learning and some features m
 ---
 
 ## CREDITS
-- **@Kianish** — Kshrom, Performance Tweaks, Battery Optimization, Network tweaks, Banner, Idea 🟣  
-- **@Tisenu100** — UN1CA-A70 Base, Patches, Mods, Full Selinux Support 🛠️  
+- **@Kianish** — Kshrom, Performance Tweaks, Battery Optimization, Network tweaks, Banner, Idea  
+- **@Tisenu100** — UN1CA-A70 Base, Patches, Mods, Full Selinux Support 
 - **@salvogiangri** — UN1CA Project, KnoxPatch  
 - **@nookgit12** — Build assistance  
 - **LineageOS Team** — For keeping SM6150 devices alive  
