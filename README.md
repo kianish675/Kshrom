@@ -19,7 +19,7 @@ This is my first ever personal project. I’m still learning and some features m
 ## INFORMATION OF THIS ROM
 - Based on **A736BXXUAFYE6 (Galaxy A73 5G)**
 - **OneUI 7 (Android 15)**
-
+- **Not tested on A705MN/GM (please try flashing and let me know!)**
 ---
 
 ## FEATURES
@@ -38,12 +38,8 @@ This is my first ever personal project. I’m still learning and some features m
 ---
 
 ## KNOWN BUGS
-- Face Unlock not working *(unfixable since A70 never got One UI 5)*  
 - Bluetooth not working *(might get fixed)*  
-- Small Black Cube around camera *(investigating issue)*  
 - NFC (PN547 and non-NFC models only)  
-- Not tested on A705F/MN/GM (please try flashing and let me know!)  
-- Disable **"Sending Diagnostic Data"** during setup  
 
 ---
 
