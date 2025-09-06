@@ -84,6 +84,7 @@ This is my first ever personal project. I’m still learning and some features m
 - **LineageOS Team** — For keeping SM6150 devices alive  
 - **@ExtremeXT** — Bluetooth Library Patch Support for One UI 7 Devices, Mods like: Battery Health, Battery Cycles count, Outdoor Mode, owns ExtremeROM
 - **@3arthur6** — Bluetooth Library Patch  
+- **@Ocin4ever** — Paradigm Mod (Now Brief)
 
 ---
 
