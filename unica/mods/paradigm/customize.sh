@@ -1,6 +1,6 @@
 # Now Brief
-ADD_TO_WORK_DIR "b4q" "system" "system/priv-app/SamsungSmartSuggestions/SamsungSmartSuggestions.apk"
-ADD_TO_WORK_DIR "b4q" "system" "system/priv-app/SamsungSmartSuggestions/oat"
+ADD_TO_WORK_DIR "a73xqxx" "system" "system/priv-app/SamsungSmartSuggestions/SamsungSmartSuggestions.apk"
+ADD_TO_WORK_DIR "a73xqxx" "system" "system/priv-app/SamsungSmartSuggestions/oat"
 SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_FRAMEWORK_SUPPORT_PERSONALIZED_DATA_CORE" "TRUE"
 
 # AI
@@ -10,4 +10,4 @@ SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_CAMERA_SUPPORT_GALLERY_LR" "TR
 SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_LOCKSCREEN_CONFIG_WALLPAPER_STYLE" "VIDEO,COVER_MP4,GENWEATHER,FLIPSUIT_LOCK"
 SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_MMFW_SUPPORT_AI_MASTERINGNET" "TRUE"
 
-# thx to paradigm for this 
+# thx to the paradigm owner for this
