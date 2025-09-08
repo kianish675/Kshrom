@@ -1,0 +1,4 @@
+id=hals-fix
+name=Hals-fix
+author=ksh675
+description=adds nfc, a2dp/bluetooth framework files and hals to the system.
