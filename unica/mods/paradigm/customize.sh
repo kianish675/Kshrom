@@ -1,13 +1,10 @@
-# Now Brief
-ADD_TO_WORK_DIR "a73xqxx" "system" "system/priv-app/SamsungSmartSuggestions/SamsungSmartSuggestions.apk"
-ADD_TO_WORK_DIR "a73xqxx" "system" "system/priv-app/SamsungSmartSuggestions/oat"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/priv-app/SamsungSmartSuggestions/SamsungSmartSuggestions.apk" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/priv-app/Moments/Moments.apk" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/permissions/privapp-permissions-com.samsung.android.app.moments.xml" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/default-permissions/default-permissions-com.samsung.android.app.moments.xml" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/sysconfig/moments.xml" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/permissions/privapp-permissions-com.samsung.android.smartsuggestions.xml" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/default-permissions/default-permissions-com.samsung.android.smartsuggestions.xml" 0 0 644 "u:object_r:system_file:s0"
+ADD_TO_WORK_DIR "pa1qxxx" "system" "system/etc/sysconfig/samsungsmartsuggestions.xml" 0 0 644 "u:object_r:system_file:s0"
+SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_COMMON_CONFIG_AI_VERSION" "20251"
 SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_FRAMEWORK_SUPPORT_PERSONALIZED_DATA_CORE" "TRUE"
-
-# AI
-SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_CAMERA_CONFIG_IS_GPPM_1_0_ENABLED" "TRUE"
-SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_CAMERA_CONFIG_WINE_DETECTOR" "V1_SNAP_CPU"
-SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_CAMERA_SUPPORT_GALLERY_LR" "TRUE"
-SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_LOCKSCREEN_CONFIG_WALLPAPER_STYLE" "VIDEO,COVER_MP4,GENWEATHER,FLIPSUIT_LOCK"
-SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_MMFW_SUPPORT_AI_MASTERINGNET" "TRUE"
-
-# thx to the paradigm owner for this
