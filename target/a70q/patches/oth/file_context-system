@@ -4,11 +4,7 @@
 /system/media/audio/ringtones u:object_r:system_file:s0
 /system/media/audio/ringtones/SoundTheme u:object_r:system_file:s0
 /system/media/audio/ringtones/SoundTheme/Galaxy u:object_r:system_file:s0
-<<<<<<< HEAD
 /system/media/audio/ringtones/SoundTheme/Galaxy/Over_the_Horizon_2019\.ogg u:object_r:system_file:s0
 /system/media/audio/ringtones/SoundTheme/Galaxy/Over_the_Horizon_2016\.ogg u:object_r:system_file:s0
 /system/media/audio/ringtones/SoundTheme/Galaxy/Aurora\.ogg u:object_r:system_file:s0
 /system/media/audio/ringtones/SoundTheme/Galaxy/Galaxy_Bells_S25\.ogg u:object_r:system_file:s0
-=======
-/system/media/audio/ringtones/SoundTheme/Galaxy/Over_the_Horizon_2016\.ogg u:object_r:system_file:s0
->>>>>>> ebab736d95e61c2750b8f0b5770e653a3661b860
