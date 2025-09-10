@@ -1,0 +1,17 @@
+
+on post-fs-data
+
+    mkdir /data/sec_pass 0771 system system
+    chown system system /data/sec_pass
+    chmod 771 /data/sec_pass
+    chcon u:object_r:system_data_file:s0 /data/sec_pass
+
+    mkdir /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223 0771 system system
+    chown system system /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223
+    chmod 771 /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223
+    chcon u:object_r:system_data_file:s0 /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223
+
+    mkdir /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223/files 0771 system system
+    chown system system /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223/files
+    chmod 771 /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223/files
+    chcon u:object_r:system_data_file:s0 /data/sec_pass/5548a64a3d992c3e5b9211a9195d3bbc60becd289756fab6a1ee5130fae9a223/files
