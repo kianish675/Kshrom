@@ -68,15 +68,15 @@ Alot of more stuff that i cant remember
 
 ---
 ## CREDITS
-- **@Kianish** — Kshrom, Performance Tweaks, Battery Optimization, Network tweaks, Banner, Idea  
-- **@Tisenu100** — UN1CA-A70 Base, Patches, Mods, Full Selinux Support 
-- **@salvogiangri** — UN1CA Project, KnoxPatch  
-- **@nookgit12** — Build assistance  
-- **LineageOS Team** — For keeping SM6150 devices alive  
-- **@ExtremeXT** — Bluetooth Library Patch Support for One UI 7 Devices, Mods like: Battery Health, Battery Cycles count, Outdoor Mode, owns ExtremeROM
-- **@3arthur6** — Bluetooth Library Patch  
-- **@Ocin4ever** — Paradigm Mod (Now Brief)
-
+Credits
+- salvogiangri for the UN1CA Project, UN1CA Build system and also KnoxPatch
+- tisenu100 for the UN1CA-A70 Base, Patches & mods.
+- Ocin4ever for the Paradigm Mod.
+- ExtremeXT for his patches and mods, Support of Bluetooth Library Patch for One UI 7, ExtremeROM
+- nookgit12 for his emotional support, getting me into porting, and also being a maintainer for the rom.
+- rtd1250 for the main Galaxy A70 support device trees, kernel support
+- SM6150 Team for keeping SM6150 Devices Alive
+- @3arthur6 for Bluetooth Library Patch.
 ---
 
 ## COMMUNITY
