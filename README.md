@@ -71,7 +71,7 @@ Alot of more stuff that i cant remember
 Credits
 - salvogiangri for the UN1CA Project, UN1CA Build system and also KnoxPatch
 - tisenu100 for the UN1CA-A70 Base, Patches & mods.
-- Ocin4ever for the Paradigm Mod.
+- Ocin4ever for the Paradigm Mod, his co-authoring on some patches, and smali patches
 - ExtremeXT for his patches and mods, Support of Bluetooth Library Patch for One UI 7, ExtremeROM
 - nookgit12 for his emotional support, getting me into porting, and also being a maintainer for the rom.
 - rtd1250 for the main Galaxy A70 support device trees, kernel support
