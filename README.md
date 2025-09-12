@@ -17,29 +17,41 @@ This is my first ever personal project. I’m still learning and some features m
 ---
 
 ## INFORMATION OF THIS ROM
-- Based on **A736BXXUAFYE6 (Galaxy A73 5G)**
-- **OneUI 7 (Android 15)**
-- **Not tested on A705MN/GM (please try flashing and let me know!)**
+Based off Galaxy A73 5G's most recent firmware **(A736BXXSAFYH2)**
+OneUI 7 **(Android 15)**
+Based off the **August SPL**
 ---
 
 ## FEATURES
-- Galaxy AI (AI Photo Editor)  
-- Performance Based Debloat  
-- Selinux Enforcing  
-- Battery Tweaks  
-- Smart View Support  
-- Fullscreen AOD (shows lockscreen wallpaper)  
-- RIL Functional  
-- Fingerprint Support  
-- Bluetooth Library Patcher Included  
-- KnoxPatch Implemented In System Frameworks  
-- DeKnoxed  
+- Some Custom Ringtones
+- Extra Mods (Outdoor Mode, etc.)
+- Now Brief (not fully fixed)
+- Selinux Full Support
+- Galaxy AI (Photo Editor) Support
+- Mid-end Animations
+- CSC Mods (Network Speed in Status Bar, 5GHz Hotspot)
+- Battery life Improvments
+- Debloated from Unnecessary Applications, etc.
+- Multi-User Support
+- DeKnoxed
+- KnoxPatch Included in various System Frameworks
+- Bluetooth Library Patch Included
+- EroFS Partitions
+- All software features from A73 5G
+- Performance Optimizations
+- Magisk Out of the box
+- Network Optimizations
+- Adaptive Brightness Support
+- RIL Funtional
+- Functional Smart View
+- Bootloader spoofed
+Alot of more stuff that i cant remember
 
 ---
 
 ## KNOWN BUGS
 - Bluetooth not working *(might get fixed)*  
-- NFC (PN547 and non-NFC models only)  
+- NFC (Not Fully tested)  
 
 ---
 
@@ -55,27 +67,6 @@ This is my first ever personal project. I’m still learning and some features m
 - [Kernel Source Code](https://github.com/LineageOS/android_kernel_samsung_sm6150)  
 
 ---
-
-## INSTALLATION GUIDE
-> ⚠️ **WARNING: THIS WILL WIPE YOUR ENTIRE PHONE!**  
-> Proceed at your own risk.
-
-1. Download and install the **Samsung USB Driver** (Windows users).  
-2. Ensure you are on the latest **A70 firmware A705FNXXU5DXD4** (otherwise features may break).  
-3. Unlock your bootloader fully *(not only from settings)*.  
-4. Boot into **Download Mode**.  
-5. Flash the custom recovery → [Download Recovery](https://github.com/rtd1250/a70q_OTA/releases/download/20250628/lineage-22.2-20250628-recovery-a70q.tar).  
-6. Boot into recovery →  
-   - Factory reset → **Format system partition**  
-   - Return to menu → **Apply update → Apply from ADB**  
-7. On PC:  
-   - Linux → `sudo apt install adb && adb sideload rom.zip`  
-   - Windows → Use **SDK Platform Tools** and do **adb sideload rom.zip**
-8. Wait for installation to finish.  
-9. Reboot and enjoy.
-
----
-
 ## CREDITS
 - **@Kianish** — Kshrom, Performance Tweaks, Battery Optimization, Network tweaks, Banner, Idea  
 - **@Tisenu100** — UN1CA-A70 Base, Patches, Mods, Full Selinux Support 
